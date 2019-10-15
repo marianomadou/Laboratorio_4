@@ -12,3 +12,8 @@ ng g c componentes/registro
 ng g class clases/usuario
 
 ng generate module app-routing --flat --module=app
+
+
+https://marianomadou.github.io/
+
+https://github.com/marianomadou/marianomadou.github.io
