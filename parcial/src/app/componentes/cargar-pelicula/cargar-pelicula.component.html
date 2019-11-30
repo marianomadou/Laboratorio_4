@@ -1,0 +1,91 @@
+<!--Section: Contact v.2-->
+<section class="general mb-4 form-group">
+
+    <!--Section heading-->
+    <div class="col-12 text-center">
+        <h2 class="h2-responsive font-weight-bold text-center my-4">Carga tu Pelicula
+            <mdb-icon id="cargar" fas icon="angle-down" (click)="mostrar()" *ngIf="!ver"></mdb-icon>
+            <mdb-icon fas icon="angle-up" (click)="mostrar()" *ngIf="ver"></mdb-icon>
+
+        </h2>
+        <button type="button" class="btn btn-secondary" (click)="auth.signOut()">desloguear</button>
+    </div>
+
+
+    <!--Section description-->
+
+    <div class="row animated fadeInDown" *ngIf="ver">
+
+        <!--Grid column-->
+
+        <div class="col-md-1 text-center">
+        </div>
+        <div class="col-md-10 mb-md-0 mb-5">
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <input type="text" id="name" name="name" placeholder="Titulo" class="form-control" [(ngModel)]="peliculaNueva.nombre" required>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="md-form mb-0">
+                        <input type="number" min="1900" placeholder="1984" max="2099" step="1" value="2016" id="fechaEstreno" name="fechaEstreno" class="form-control" [(ngModel)]="peliculaNueva.fechaEstreno" required />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="md-form mb-0">
+                        <input type="number" id="cantidadPublico" min="100" placeholder="cantidadPublico" max="10000000" name="cantidadPublico" class="form-control" [(ngModel)]="peliculaNueva.cantidadPublico" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="md-form mb-0">
+                        <input type="file" id="archivo" name="archivo" class="form-control" (change)="detectFiles($event)" required>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="md-form mb-0">
+                        <select class="browser-default custom-select" id="actor" required>                    
+                                <option *ngFor="let title of actores" 
+                                [value]="title" 
+                               >{{title}}</option>
+                            
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="md-form mb-0">
+                        <select class="browser-default custom-select" id="tipo" required>                    
+                            <option value="1">Terror</option>
+                            <option value="2">Comedia</option>
+                            <option value="3">Amor</option>
+                            <option value="4">Otros</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center text-md-left">
+
+                <button type="button" class="btn btn-secondary" (click)="cargar()">Enviar</button>
+
+            </div>
+            <div class="status"></div>
+        </div>
+
+        <div class="col-md-1 text-center">
+
+        </div>
+
+
+    </div>
+
+</section>
