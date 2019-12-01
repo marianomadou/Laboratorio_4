@@ -26,14 +26,15 @@ export class Login2Component implements OnInit {
 
   }
 
-  ingresar() {    
+  async ingresar() {    
     this.servicio.autenticar().onLogin(this.email, this.pass).then(async () => {
-      await this.servicio.usuarios().traerUnUsuarioPorMail(this.email);
+      await this.servicio.usuarios().getUserByMail(this.email);
       timer(3000).subscribe(() => {
+   
       });
       this.email = "";
       this.pass = "";
-      this.router.navigate(['/home']);
+      //this.router.navigate(['/home']);
     }).catch()
     {
       

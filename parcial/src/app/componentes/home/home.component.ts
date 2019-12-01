@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
       });
     });
 
+    //console.log("usuario en localstorage en Home",localStorage.getItem('usuario'))
   }
 
   async onLogout() {

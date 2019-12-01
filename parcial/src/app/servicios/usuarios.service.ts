@@ -59,6 +59,43 @@ export class UsuariosService {
     })
   }
 
+  getUserByMail(mail) {
+    let usuario;
+    this.fireStore.collection('users').snapshotChanges().subscribe(e => {
+      e.map(a => {
+        const data = a.payload.doc.data() as Usuario;
+        if (data.email == mail) {
+          this.usuarioActual = data;
+          //console.info("this.usuario", JSON.stringify(this.usuarioActual));
+          localStorage.setItem("usuario", JSON.stringify(this.usuarioActual));
+          //var user = JSON.parse(localStorage.getItem('usuario')); //para traerlo despues
+          //this.router.navigateByUrl("/perfil"); //para navegar hacia un determinado perfil
+          //this.router.navigateByUrl("/home");
+        }
+
+      });
+
+    })
+    usuario=JSON.parse(localStorage.getItem('usuario'));
+    console.log('usuario seteado: ', usuario.perfil);
+    try{
+      if(usuario.perfil=='administrador'){
+        console.log('VA A ADMIN?')
+        this.router.navigateByUrl("/administrador");
+      }else if(usuario.perfil=="cliente"){
+        this.router.navigateByUrl("/cliente");
+      }else if(usuario.perfil=="visitante"){
+        this.router.navigateByUrl("/visitante");
+      }
+
+    }catch(err){
+      console.log('error al intentar ingresar', err)
+    };
+    
+    
+    //console.log("usuario en localstorage",localStorage.getItem('usuario'))
+  }
+
 
   traerUsuarioActual() {
     return this.usuarioActual
