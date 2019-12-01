@@ -53,7 +53,7 @@
                 <div class="col-md-6">
                     <div class="md-form mb-0">
                         <input type="file" id="archivo" name="archivo" class="form-control"
-                            (change)="detectFiles($event)" required>
+                            (change)="detectFiles($event)">
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -67,7 +67,8 @@
 
                 <div class="col-md-3">
                     <div class="md-form mb-0">
-                        <select class="browser-default custom-select" id="tipo" required>
+                        <select class="browser-default custom-select" class="form-control" name="tipo" id="tipo"
+                            required>
                             <option value="1">Terror</option>
                             <option value="2">Comedia</option>
                             <option value="3">Amor</option>

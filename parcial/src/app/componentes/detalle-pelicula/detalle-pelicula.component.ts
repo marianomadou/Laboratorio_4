@@ -45,43 +45,6 @@ export class DetallePeliculaComponent implements OnInit {
     this.modal.emit(false);
   }
 
-/*   actualizarPelicula(pelicula){
-    let genero =(<HTMLInputElement> document.getElementById("tipo")).value;
-    let actor=(<HTMLInputElement> document.getElementById("actor")).value;
-
-    this.pelicula.actor=actor;
-    this.pelicula.fotoPelicula;
-
-    console.log("genero "+genero);
-    
-    switch(genero)
-    {
-      case "terror":
-        this.pelicula.tipo= TipoPelicula.terror;
-        break;
-      case "comedia":
-        this.pelicula.tipo= TipoPelicula.comedia;
-        break;
-      case "amor":
-        this.pelicula.tipo= TipoPelicula.amor;
-        break;
-      case "otros":
-        this.pelicula.tipo= TipoPelicula.otros;
-        break;  
-       default:
-            this.pelicula.tipo= TipoPelicula.otros;
-        break;  
-    }         
-    console.log('peli uid?', pelicula)
-    let id= pelicula.id;
-    console.log('peli id?', id)
-    let peliCopia= JSON.parse(JSON.stringify(pelicula));
-
-    this.servicioGeneral.servPeliculas.actualizarUno(id, peliCopia)
-    this.servicioGeneral.servPeliculas.enviar(peliCopia, this.archivo);
-
-  } */
-
   detectFiles(event) {
     this.archivo= event.target.files[0];
     this.opcion = 2;
@@ -90,7 +53,7 @@ export class DetallePeliculaComponent implements OnInit {
   cambiarInfo() {
     let genero =(<HTMLInputElement> document.getElementById("tipo")).value;
     let actor=(<HTMLInputElement> document.getElementById("actor")).value;
-    
+
     console.log('pelicula?', this.pelicula)
     switch (this.opcion) {
       case 1:

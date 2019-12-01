@@ -25,6 +25,7 @@ import { PeliculasListadoComponent } from './componentes/peliculas-listado/pelic
 import { Login2Component } from './componentes/login2/login2.component';
 import { ActorAltaFotoComponent } from './componentes/actor-alta-foto/actor-alta-foto.component';
 import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
 
 
   ],

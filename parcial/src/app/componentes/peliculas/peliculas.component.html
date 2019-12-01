@@ -1,18 +1,19 @@
 <div class=" card-group">
     <div class="col-md-4 col-sm-12" *ngFor="let pelicula of peliculas">
-        <div class="card" (click)="elegir(pelicula)">
+        <div class="card text-center">
             <img src="{{pelicula.url}}" class="card-img-top" alt="{{pelicula.url}}">
-            <div class="card-body " >
+            <div class="card-body " (click)="elegir(pelicula)">
                 <h3>{{pelicula.nombre}}</h3>
                 <h5 class="card-title">Fecha de Estreno: {{pelicula.fechaEstreno}}</h5>
                 <p class="card-text">Género: {{pelicula.tipo}}</p>
                 <p class="card-text">Cantidad Espectadores: {{pelicula.fechaEstreno}}</p>
                 <p class="card-text">Actor Principal: {{pelicula.actor}}</p>
-                <app-boton-eliminar [peliculas]="pelicula"></app-boton-eliminar>
-                <!--   <button class="btn aqua-gradient col-5 " style="padding: 0 ">Modificar</button> -->
             </div>
+            <app-boton-eliminar class="ml-3" [peliculas]="pelicula"></app-boton-eliminar>
+            <!--   <button class="btn aqua-gradient col-5 " style="padding: 0 ">Modificar</button> -->
         </div>
     </div>
 </div>
 
-<app-detalle-pelicula [pelicula]="peliculaElegida" *ngIf="peliculaElegida" (modal)="ocultar($event)"> </app-detalle-pelicula>
+<app-detalle-pelicula [pelicula]="peliculaElegida" *ngIf="peliculaElegida" (modal)="ocultar($event)">
+</app-detalle-pelicula>

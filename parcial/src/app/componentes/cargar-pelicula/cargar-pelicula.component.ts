@@ -17,20 +17,22 @@ export class CargarPeliculaComponent implements OnInit {
   peliculaNueva: Pelicula;
   generos: TipoPelicula;
   archivo: any;
-  ver:boolean;
-  actores:string [];
+  ver: boolean;
+  actores: string[];
   valorActor;
+  opcion;
 
   constructor(private serviciogeneral: MiservicioPrincipalService, public auth: AuthService) {
     this.peliculaNueva = new Pelicula();
-    this.ver= false;
+    this.ver = false;
 
-    
-  
+
 
   }
 
   ngOnInit() {
+    this.opcion = 1;
+    this.archivo = false;
 
     this.serviciogeneral.servActores.traerTodoActor().subscribe(actions => {
       this.actores = [];
@@ -39,60 +41,77 @@ export class CargarPeliculaComponent implements OnInit {
         const id = a.payload.doc.id;
         console.info(data, " data");
 
-        this.actores.push(data.nombre+" "+ data.apellido);
-        console.log(data.nombre+" "+ data.apellido)
+        this.actores.push(data.nombre + " " + data.apellido);
+        console.log(data.nombre + " " + data.apellido)
 
       });
     });
-    
 
   }
 
   cargar() {
 
+    let genero = (<HTMLInputElement>document.getElementById("tipo")).value;
+    let actor = (<HTMLInputElement>document.getElementById("actor")).value;
 
-    let genero =(<HTMLInputElement> document.getElementById("tipo")).value;
-    let actor=(<HTMLInputElement> document.getElementById("actor")).value;
+    this.peliculaNueva.actor = actor;
 
-    this.peliculaNueva.actor=actor;
+    console.log("genero" + genero);
 
-    console.log("genero"+genero);
-    
-    switch(genero)
-    {
-      case "terror":
-        this.peliculaNueva.tipo= TipoPelicula.terror;
+    switch (genero) {
+      case "1":
+        this.peliculaNueva.tipo = TipoPelicula.terror;
         break;
-      case "comedia":
-        this.peliculaNueva.tipo= TipoPelicula.comedia;
+      case "2":
+        this.peliculaNueva.tipo = TipoPelicula.comedia;
         break;
-      case "amor":
-        this.peliculaNueva.tipo= TipoPelicula.amor;
+      case "3":
+        this.peliculaNueva.tipo = TipoPelicula.amor;
         break;
-      case "otros":
-        this.peliculaNueva.tipo= TipoPelicula.otros;
-        break;  
-       default:
-            this.peliculaNueva.tipo= TipoPelicula.otros;
-        break;  
-    }         
-   this.serviciogeneral.servPeliculas.enviar(this.peliculaNueva, this.archivo);
+      case "4":
+        this.peliculaNueva.tipo = TipoPelicula.otros;
+        break;
+      default:
+        this.peliculaNueva.tipo = TipoPelicula.otros;
+        break;
+    }
+
+
+  /*   console.log("pelicula antes del switch opcion " + this.peliculaNueva.actor +
+      " " + this.peliculaNueva.tipo + " " + this.peliculaNueva.nombre + " " + this.peliculaNueva.cantidadPublico
+      + " " + this.peliculaNueva.fechaEstreno + " " + this.peliculaNueva.url);
+
+ */
+
+    switch (this.opcion) {
+      case 1:
+
+        setTimeout(() => {
+          this.serviciogeneral.servPeliculas.enviarSinFoto(this.peliculaNueva);
+        }, 3000);
+        console.log("llega a opcion? como manda la pelicula " + this.peliculaNueva);
+        break;
+      case 2:
+        this.serviciogeneral.servPeliculas.enviar(this.peliculaNueva, this.archivo);
+        break;
+
+    }
+
   }
 
 
   detectFiles(event) {
-    this.archivo= event.target.files[0];
+    this.archivo = event.target.files[0];
+    this.opcion = 2;
   }
 
 
-  mostrar()
-  {
-    if(!this.ver)
-    {
-      this.ver=true;
+  mostrar() {
+    if (!this.ver) {
+      this.ver = true;
     }
-    else{
-      this.ver=false;
+    else {
+      this.ver = false;
     }
   }
 
