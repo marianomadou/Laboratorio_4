@@ -1,4 +1,6 @@
 <form class="modal-content animate">
+
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-10 col-lg-12 col-md-9">
@@ -9,9 +11,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4"> Bienvenido
-                                            <!-- <i class="fas fa-question-circle" (click)="ayuda()"></i> -->
-                                        </h1>
+                                        <h1 class="h4 text-gray-900 mb-4"> Registrese</h1>
                                     </div>
                                     <form class="user">
                                         <div class="form-group">
@@ -21,21 +21,26 @@
                                                 data-error="Bruh, that email address is invalid" required>
                                             <div class="help-block with-errors"></div>
                                         </div>
-
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="clave"
                                                 [(ngModel)]="pass" name="pass" placeholder="Password">
                                         </div>
-                                        <!-- <a (click)="auth.usuarioPass(email, pass)"
-                                            class="btn btn-success btn-user btn-block">
-                                            Login
-                                        </a> -->
+                                        <div class="form-group">
+                                            <select class="browser-default custom-select" class="form-control"
+                                                (change)="filterChanged($event.target.value)" id="perfil" name="perfil">
+                                                <option *ngFor="let perfil of perfiles" [value]="perfil.value">
+                                                    {{perfil.display}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <a (click)="crear()" class="btn btn-primary btn-user btn-block">
+                                            Registrese
+                                        </a>
+                                        <hr>
                                         <button type="button" class="btn btn-success btn-block text-center mb-2"
-                                        (click)="ingresar()">Login</button>    
+                                            (click)="irALogearse()">Ir al Login</button>
                                     </form>
                                     <hr>
-                                    <button type="button" class="btn btn-primary btn-block text-center mb-2"
-                                        (click)="irAlRegistro()">Registrese si todavia no posee cuenta</button>
                                 </div>
                             </div>
                         </div>

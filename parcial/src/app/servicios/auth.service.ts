@@ -15,7 +15,7 @@ export class AuthService {
   user$: Observable<any>;
 
   constructor(
-    private afAuth: AngularFireAuth,
+    public afAuth: AngularFireAuth,
     private afs: AngularFirestore,
     private router: Router,
     private fireStore: AngularFirestore,
@@ -40,11 +40,15 @@ export class AuthService {
 
   async clavePassSignin(email, pass) {
 
-    console.log("ateroden");
-    
+    console.log("atroden");
     const credential= await this.afAuth.auth.signInWithEmailAndPassword(email, pass);
     return this.updateUserData(credential.user);
 
+  }
+
+  async onLogin(email, pass) {
+    console.log("atroden, como tu vieja maraca!");
+    return await this.afAuth.auth.signInWithEmailAndPassword(email, pass);
   }
 
   async usuarioPass(email, pass) {
@@ -54,25 +58,18 @@ export class AuthService {
   }
 
 
-  enviar(email, pass, uid2) {
+  enviar(email, pass, perfil) {
     var sp = email.split('@');
 
     return this.fireStore.collection('users').add({
-      uid: uid2,
       email: email,
       displayName: sp[0],
-      photoURL: '"./assets/foto.png",',
-      from: "site",
+      photoURL: '"./assets/fotopordefecto.jpg",',
+      perfil: perfil,
       clave: pass
     })
 
   }
-
-
-
-
-
-
 
 
   private updateUserData(user) {
@@ -92,7 +89,14 @@ export class AuthService {
 
   async signOut() {
     await this.afAuth.auth.signOut();
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
+    localStorage.setItem("email", " ");
+  }
+
+
+  async altaUsuario(email, pass, perfil) {
+    const credential = await this.afAuth.auth.createUserWithEmailAndPassword(email, pass);
+    this.enviar(email, pass, perfil);
   }
 
 }

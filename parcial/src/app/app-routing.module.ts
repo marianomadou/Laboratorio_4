@@ -13,6 +13,7 @@ import { AuthGuard } from './servicios/auth.guard';
 import { Login2Component } from './componentes/login2/login2.component';
 import { ActorAltaFotoComponent} from './componentes/actor-alta-foto/actor-alta-foto.component'
 import {DetallePeliculaComponent} from './componentes/detalle-pelicula/detalle-pelicula.component'
+import {RegistroComponent} from './componentes/registro/registro.component';
 
 const routes: Routes = [
   { path:  'home', component:  HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path:  'peliculas', component:  PeliculasComponent },
   { path:  'detalle-pelicula', component:  DetallePeliculaComponent },
   { path:  'peliculas/listado', component:  PeliculasListadoComponent},
+  { path:  'registro', component:  RegistroComponent},
   { path:  'login', component:  Login2Component},
   { path: '', redirectTo: '/home', pathMatch: 'full' }]
 

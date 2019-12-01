@@ -3,6 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../servicios/auth.service';
 
 import { MiservicioPrincipalService } from 'src/app/servicios/miservicio-principal.service';
+import { Router } from '@angular/router';
+import { timer } from 'rxjs';
 
 
 @Component({
@@ -16,15 +18,29 @@ export class Login2Component implements OnInit {
   email: string;
   pass: string;
 
-
-
   constructor(public auth: AuthService,
-    public jugadores:MiservicioPrincipalService) { }
+    public servicio:MiservicioPrincipalService,
+    private router: Router) { }
 
   ngOnInit() {
 
   }
 
+  ingresar() {    
+    this.servicio.autenticar().onLogin(this.email, this.pass).then(async () => {
+      await this.servicio.usuarios().traerUnUsuarioPorMail(this.email);
+      timer(3000).subscribe(() => {
+      });
+      this.email = "";
+      this.pass = "";
+      this.router.navigate(['/home']);
+    }).catch()
+    {
+      
+    }
+
+
+  }
 
   editar() {
     this.editarB.emit(true);
@@ -35,6 +51,10 @@ export class Login2Component implements OnInit {
   {
     this.email= "momo@momo.com";
     this.pass="123456";
+  }
+
+  irAlRegistro(){
+    this.router.navigate(['/registro']);
   }
 
 }

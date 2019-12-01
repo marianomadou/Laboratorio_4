@@ -9,13 +9,30 @@
             </a>
 
             <!-- Collapse -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <!-- Links -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+                <div class="mr-0">
+            
+               
+                    
+                        <a class="nav-link-dark js-scroll-trigger mt-5"
+                            *ngIf="servicioGenerla.autenticar().afAuth.auth.currentUser"
+                            (click)="scrollToElement(portfolio)">{{servicioGenerla.autenticar().afAuth.auth.currentUser.email}}
+                        </a>
+                    
+                   <br>
+                        <a class="btn btn-primary btn-xs js-scroll-trigger"
+                            *ngIf="servicioGenerla.autenticar().afAuth.auth.currentUser"
+                            (click)="servicioGenerla.autenticar().signOut()">
+                            Logout</a>
+                  
+                        </div>
+         
             </div>
 
         </div>

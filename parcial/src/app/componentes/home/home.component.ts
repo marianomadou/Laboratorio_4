@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PeliculasServicioService } from 'src/app/servicios/peliculas-servicio.service';
 import { Pelicula } from 'src/app/clases/pelicula';
 import { MiservicioPrincipalService } from 'src/app/servicios/miservicio-principal.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ export class HomeComponent implements OnInit {
   peliculaElegida = Pelicula;
   busqueda: string;
 
-  constructor(private servicioGenerla: MiservicioPrincipalService) {
+  constructor(private servicioGenerla: MiservicioPrincipalService,
+    private router: Router) {
   }
 
   async ngOnInit() {
@@ -34,11 +36,17 @@ export class HomeComponent implements OnInit {
 
   }
 
+  async onLogout() {
+    this.servicioGenerla.auth.signOut();
+    console.log('estas afuera!')
+    localStorage.clear();//comentar esta linea para testing
+    this.router.navigate(['/login']);
+  }
 
   mapear($event) {
-     
-    if ($event=== "") {      
-        this.todasPeliculas = this.todasPeliculasCopia;
+
+    if ($event === "") {
+      this.todasPeliculas = this.todasPeliculasCopia;
     }
     else {
       this.todasPeliculas = this.todasPeliculas.filter((value) => {

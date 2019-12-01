@@ -25,7 +25,8 @@ import { PeliculasListadoComponent } from './componentes/peliculas-listado/pelic
 import { Login2Component } from './componentes/login2/login2.component';
 import { ActorAltaFotoComponent } from './componentes/actor-alta-foto/actor-alta-foto.component';
 import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { RegistroComponent } from './componentes/registro/registro.component'; 
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HttpClientModule } from '@angular/common/http';
     ActorListadoComponent,
     PeliculasListadoComponent,
     ActorAltaFotoComponent,
-    DetallePeliculaComponent
+    DetallePeliculaComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
