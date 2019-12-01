@@ -1,20 +1,18 @@
 <div class=" card-group">
-    <div class="col-md-4 col-sm-12" *ngFor="let usuario of peliculas">
-        <div class="card">
-            <img src="{{usuario.url}}" class="card-img-top" alt="{{usuario.url}}">
-            <div class="card-body ">
-                <h3>{{usuario.nombre}}</h3>
-                <h5 class="card-title">Fecha de Estrenos {{usuario.fechaEstreno}}</h5>
-                <p class="card-text">Cantidad Espectadores {{usuario.fechaEstreno}}</p>
-                <p class="card-text">Actor Principal{{usuario.actor}}</p>
-
-                <!-- <button class=" btn blue-gradient col-5 " style="padding: 0" (click)="eliminar(usuario)">Eliminar</button> -->
-                <app-boton-eliminar [peliculas]="usuario"></app-boton-eliminar>
-
-
+    <div class="col-md-4 col-sm-12" *ngFor="let pelicula of peliculas">
+        <div class="card" (click)="elegir(pelicula)">
+            <img src="{{pelicula.url}}" class="card-img-top" alt="{{pelicula.url}}">
+            <div class="card-body " >
+                <h3>{{pelicula.nombre}}</h3>
+                <h5 class="card-title">Fecha de Estreno: {{pelicula.fechaEstreno}}</h5>
+                <p class="card-text">Género: {{pelicula.tipo}}</p>
+                <p class="card-text">Cantidad Espectadores: {{pelicula.fechaEstreno}}</p>
+                <p class="card-text">Actor Principal: {{pelicula.actor}}</p>
+                <app-boton-eliminar [peliculas]="pelicula"></app-boton-eliminar>
                 <!--   <button class="btn aqua-gradient col-5 " style="padding: 0 ">Modificar</button> -->
-
             </div>
         </div>
     </div>
 </div>
+
+<app-detalle-pelicula [pelicula]="peliculaElegida" *ngIf="peliculaElegida" (modal)="ocultar($event)"> </app-detalle-pelicula>

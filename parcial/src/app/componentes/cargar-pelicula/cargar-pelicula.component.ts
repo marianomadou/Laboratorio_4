@@ -60,16 +60,16 @@ export class CargarPeliculaComponent implements OnInit {
     
     switch(genero)
     {
-      case "1":
+      case "terror":
         this.peliculaNueva.tipo= TipoPelicula.terror;
         break;
-      case "2":
+      case "comedia":
         this.peliculaNueva.tipo= TipoPelicula.comedia;
         break;
-      case "3":
+      case "amor":
         this.peliculaNueva.tipo= TipoPelicula.amor;
         break;
-      case "4":
+      case "otros":
         this.peliculaNueva.tipo= TipoPelicula.otros;
         break;  
        default:

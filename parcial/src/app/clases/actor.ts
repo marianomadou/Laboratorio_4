@@ -4,6 +4,7 @@ export class Actor {
     apellido: string;
     nacionalidad: string;
     fechaDeNacimiento: string;
+    fotoActor: string;
     constructor() {
        /*  this.nombre="Nombre";
         this.apellido="Apellido";

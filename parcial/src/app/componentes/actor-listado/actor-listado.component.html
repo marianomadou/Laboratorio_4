@@ -5,23 +5,23 @@
                 <div class="md-form mb-0">
                     <select class="browser-default custom-select" id="actor" (change)="mapear(title)" required>                    
                                 <option *ngFor="let title of actoresSelect" 
-                                [value]="title.apellido" 
-                               >{{title.nombre}} {{title.apellido}}</option>
+                                [value]="title.actor" 
+                               >{{title.actor}}</option>
                             
                         </select>
                 </div>
             </div>
-            <th *ngFor="let head of peliculas" scope="col">PeliculasPorActor {{actorElegido}} </th>
+            <th *ngFor="let head of peliculas" scope="col">PeliculasPorActor {{title.actor}} </th>
         </tr>
     </thead>
     <tbody>
         <tr mdbTableCol *ngFor="let el of todasPeliculas">
             <th scope="row">{{el.nombre}}</th>
-            <td>{{el.nombre}}</td>
             <td>{{el.tipo}}</td>
             <td>{{el.fechaEstreno}}</td>
             <td>{{el.cantidadPulico}}</td>
-            <td><img src="{{el.url}}" style="zoom: 0.1"></td>
+            <td>{{el.actor}}</td>
+            <td><img src="{{el.url}}" style="zoom: 0.1; width: 500px; height: auto;"></td>
 
         </tr>
     </tbody>

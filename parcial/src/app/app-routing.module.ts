@@ -11,7 +11,8 @@ import { PeliculasListadoComponent } from './componentes/peliculas-listado/pelic
 import { CargarPeliculaComponent } from './componentes/cargar-pelicula/cargar-pelicula.component';
 import { AuthGuard } from './servicios/auth.guard';
 import { Login2Component } from './componentes/login2/login2.component';
-
+import { ActorAltaFotoComponent} from './componentes/actor-alta-foto/actor-alta-foto.component'
+import {DetallePeliculaComponent} from './componentes/detalle-pelicula/detalle-pelicula.component'
 
 const routes: Routes = [
   { path:  'home', component:  HomeComponent },
@@ -19,7 +20,10 @@ const routes: Routes = [
   { path:  'busqueda', component:  BusquedasComponent},
   { path:  'peliculas/alta', component: CargarPeliculaComponent, canActivate: [AuthGuard]},
   { path:  'actor/alta', component:  ActorAltaComponent ,  canActivate: [AuthGuard]},
+  { path:  'actor/alta-foto', component:  ActorAltaFotoComponent ,  canActivate: [AuthGuard]},
   { path:  'actor/listado', component:  ActorListadoComponent },
+  { path:  'peliculas', component:  PeliculasComponent },
+  { path:  'detalle-pelicula', component:  DetallePeliculaComponent },
   { path:  'peliculas/listado', component:  PeliculasListadoComponent},
   { path:  'login', component:  Login2Component},
   { path: '', redirectTo: '/home', pathMatch: 'full' }]

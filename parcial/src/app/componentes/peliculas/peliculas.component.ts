@@ -13,6 +13,8 @@ export class PeliculasComponent implements OnInit {
 
 
   @Input() peliculas: Array<any> = Array<any>();
+  peliculaElegida;
+
   constructor(private servicioGeneral: MiservicioPrincipalService) {
 
   }
@@ -23,6 +25,14 @@ export class PeliculasComponent implements OnInit {
 
   }
 
+  elegir(peli) {
+    console.log('elegi esta pelicula', peli)
+    this.peliculaElegida = peli;
+  }
+
+  ocultar($event) {
+    this.peliculaElegida = false;
+  }
 
   eliminar(peli) {
     var r = confirm("Press a button!");

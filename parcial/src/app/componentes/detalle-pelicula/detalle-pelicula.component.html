@@ -1,0 +1,66 @@
+<div id="id01" style="display:flex; padding: 15px;" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class=" col-md-12 col-lg-12 col-sm-10" role="document"
+        style=" max-height: calc(200vh - 200px); padding: 2px;    overflow-y: auto;  overflow-x: hidden">
+        <div class="card">
+            <div class="row my-3 animated bounce ml-4">
+                <h2 class="h1 text-center font-weight-bold">Pelicula Seleccionada</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card-body md-form">
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" name="detalle" id="detalle" placeholder="Nombre" class="form-control"
+                                    *ngIf="modificar" [(ngModel)]="pelicula.nombre">
+                            </div>
+                            <div class="col-6">
+                                <input type="number" min="1900" placeholder="1984" max="2099" step="1" value="2016"
+                                    id="detalle" name="detalle" class="form-control" *ngIf="modificar"
+                                    [(ngModel)]="pelicula.fechaEstreno" required />
+                            </div>
+                            <div class="col-6">
+                                <input type="number" id="detalle" min="100" placeholder="cantidadPublico" max="10000000"
+                                    name="detalle" class="form-control" *ngIf="modificar"
+                                    [(ngModel)]="pelicula.cantidadPublico" required>
+                            </div>
+                            <div class="col-6">
+                                <select class="browser-default custom-select" id="actor" *ngIf="modificar"
+                                    [(ngModel)]="pelicula.actor" required>
+                                    <option *ngFor="let title of actores" [value]="title">{{title}}</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <input type="file" name="detalle" id="detalle" (change)="detectFiles($event)"
+                                    placeholder="ingresar una foto" class="form-control" *ngIf="modificar">
+                            </div>
+                            <div class="col-6">
+                                <select class="browser-default custom-select" [(ngModel)]="pelicula.tipo" id="tipo" *ngIf="modificar" required>
+                                    <option value="terror">Terror</option>
+                                    <option value="comedia">Comedia</option>
+                                    <option value="amor">Amor</option>
+                                    <option value="otros">Otros</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-5 text-right mb-2">
+                            <button type="button" class="btn btn-primary text-center mb-2"
+                                (click)="cambiarInfo()">Modificar</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-5">
+                    <img src="{{pelicula.url}}" class="card-img-top" alt="{{pelicula.url}}"
+                        style=" max-height: 150px;  margin-left: auto; margin-right: auto;   width: auto">
+                    <h4 class="text-uppercase">Pelicula: {{pelicula.nombre}}</h4>
+                    <p class="item-intro text-muted">Fecha de Estreno: {{pelicula.fechaEstreno}}</p>
+                    <p class="item-intro text-muted">Cantidad de Publico: {{pelicula.cantidadPublico}}</p>
+                    <p class="item-intro text-muted">Actor: {{pelicula.actor}}</p>
+                </div>
+            </div>
+            <button type="button" class="btn btn-danger mt-5 mr-0" (click)="destruir()">Cerrar</button>
+        </div>
+    </div>

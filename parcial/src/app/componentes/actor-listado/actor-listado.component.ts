@@ -14,6 +14,7 @@ export class ActorListadoComponent implements OnInit {
   actoresCopia;
   todasPeliculas;
   todasPeliculasCopia;
+  todasPeliculasMap=[];
   actorElegido;
   actoresSelect;
 
@@ -25,7 +26,7 @@ export class ActorListadoComponent implements OnInit {
       actions.map(a => {
         const data = a.payload.doc.data() as Actor;
         const id = a.payload.doc.id;
-        console.info(data, " data");
+        //console.info(data, " data");
         this.actores.push(data);
       });
     });
@@ -37,7 +38,7 @@ export class ActorListadoComponent implements OnInit {
         const data = a.payload.doc.data() as Pelicula;
         const id = a.payload.doc.id;
         data.id = id;
-        console.info(data, "data");
+        //console.info(data, "data");
         this.todasPeliculas.push(data);
         this.todasPeliculasCopia.push(data);
 
@@ -51,10 +52,10 @@ export class ActorListadoComponent implements OnInit {
       actions.map(a => {
         const data = a.payload.doc.data() as Actor;
         const id = a.payload.doc.id;
-        console.info(data, " data");
+        //console.info(data, " data");
+        //this.actorElegido= data.nombre + " " + data.apellido;
         this.actoresSelect.push({
-          nombre: data.nombre,
-          apellido: data.apellido
+          actor: data.nombre + " " + data.apellido
         });
       console.log(this.actoresSelect);
       
@@ -65,20 +66,22 @@ export class ActorListadoComponent implements OnInit {
   }
 
 mapear(event)
-{
+{ 
   this.todasPeliculas= this.todasPeliculasCopia;
-  console.log("hola");
+  
   console.log(this.todasPeliculas);
   let actor=(<HTMLInputElement> document.getElementById("actor")).value;
-  this.todasPeliculas= this.todasPeliculas.filter(a => {
-    try
-    {
-      return (a.actor.includes(actor));
 
-    }catch(w){}
+  console.log("este es el actor", actor);
+  this.todasPeliculas= this.todasPeliculas.filter(peli => {
+   if(actor==peli.actor){
+     console.log('peli??', peli)
+     this.todasPeliculasMap.push(peli)
+   }
+ 
   });
     
-
+  this.todasPeliculas= this.todasPeliculasMap;
   
 }
 

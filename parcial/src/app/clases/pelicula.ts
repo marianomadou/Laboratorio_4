@@ -7,7 +7,7 @@ export class Pelicula {
     public tipo: TipoPelicula;
     public fechaEstreno: number;
     public cantidadPublico: number;
-    public fotoPelicula: string;
+    public url: string = 'src/assets/fotopordefecto.jpg';
     public actor: string;
 
     constructor() {

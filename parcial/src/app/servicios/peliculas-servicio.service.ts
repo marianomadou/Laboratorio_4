@@ -38,13 +38,32 @@ export class PeliculasServicioService { //peticion:any;
   actualizarUno(uid, peliculaActualizar) {
     return this.fireStore.collection('peliculas').doc(uid).set({
       nombre: peliculaActualizar.nombre,
-      url: peliculaActualizar.fotoPelicula,
+      url: peliculaActualizar.url,
       fechaEstreno: peliculaActualizar.fechaEstreno,
       tipo: peliculaActualizar.tipo,
       cantidadPublico: peliculaActualizar.cantidadPublico
     }, { merge: true });
   }
+  
+  actualizaUno(peliculaActualizar) {
+    console.log(peliculaActualizar)
+    return this.fireStore.collection('peliculas').doc(peliculaActualizar.id).update(peliculaActualizar);
+  }
 
+  actualizaConFoto(peliculaActualizar: Pelicula, archivo) {
+    var lala = this.storage.ref('peliculas/' + peliculaActualizar.nombre).put(archivo);
+    lala.percentageChanges().subscribe((porcentaje) => {
+      porcentaje = Math.round(porcentaje);
+
+      if (porcentaje == 100) {
+        setTimeout(() => this.storage.ref('peliculas/' + peliculaActualizar.nombre).getDownloadURL().subscribe((URL) => {
+          peliculaActualizar.url = URL;
+          this.actualizaUno(peliculaActualizar);
+        }), 3000);
+      }
+    });
+
+  }
 
   enviar(peliculaNueva: Pelicula, archivo) {
     var porcentaje = 0;
