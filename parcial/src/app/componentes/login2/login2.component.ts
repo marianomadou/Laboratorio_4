@@ -47,13 +47,6 @@ export class Login2Component implements OnInit {
     this.editarB.emit(true);
   }
 
-
-  ayuda()
-  {
-    this.email= "momo@momo.com";
-    this.pass="123456";
-  }
-
   irAlRegistro(){
     this.router.navigate(['/registro']);
   }

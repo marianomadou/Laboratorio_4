@@ -2,108 +2,93 @@
     <!-- Navbar -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
         <div class="container animated bounceInRight">
-
             <!-- Brand -->
             <a class="navbar-brand waves-effect" href="./home" target="_blank">
                 <strong class="blue-text">Primer Parcial</strong>
             </a>
-
             <!-- Collapse -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <!-- Links -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <div class="mr-0">
-            
-               
-                    
-                        <a class="nav-link-dark js-scroll-trigger mt-5"
-                            *ngIf="servicioGenerla.autenticar().afAuth.auth.currentUser"
-                            (click)="scrollToElement(portfolio)">{{servicioGenerla.autenticar().afAuth.auth.currentUser.email}}
-                        </a>
-                    
-                   <br>
-                        <a class="btn btn-primary btn-xs js-scroll-trigger"
-                            *ngIf="servicioGenerla.autenticar().afAuth.auth.currentUser"
-                            (click)="servicioGenerla.autenticar().signOut()">
-                            Logout</a>
-                  
-                        </div>
-         
-            </div>
+                <div style="align-items: flex-end;">
+                    <a class="nav-link-dark js-scroll-trigger mt-5"
+                        *ngIf="servicioGenerla.autenticar().afAuth.auth.currentUser"
+                        (click)="scrollToElement(portfolio)">{{servicioGenerla.autenticar().afAuth.auth.currentUser.email}}
+                    </a>
+                   
+                    <a class="btn btn-primary btn-xs js-scroll-trigger"
+                        *ngIf="servicioGenerla.autenticar().afAuth.auth.currentUser"
+                        (click)="servicioGenerla.autenticar().signOut()">
+                        Logout
+                    </a>
 
+                </div>
+            </div>
         </div>
     </nav>
     <!-- Navbar -->
-
 </header>
 <!--Main Navigation-->
+<div class="animation-entrada">
+    <!--Main layout-->
+    <main class="mt-5 pt-5">
+        <div class="container">
 
-<!--Main layout-->
-<main class="mt-5 pt-5">
-    <div class="container">
+            <!--Section: Jumbotron-->
+            <section class="card wow animated bounceInLeft ">
 
-        <!--Section: Jumbotron-->
-        <section class="card wow animated bounceInLeft ">
+                <!-- Content -->
+                <div class="card-body text-white text-center  ">
 
-            <!-- Content -->
-            <div class="card-body text-white text-center  ">
+                    <h1 class="mb-4" style="color: blue;">
+                        <strong>Recuperatorio del Primer Parcial de Laboratorio 4
+                            <p>Mariano Madou -Mecon- </p>
+                        </strong>
+                    </h1>
 
-                <h1 class="mb-4" style="color: blue;">
-                    <strong>Recuperatorio del Primer Parcial de Laboratorio 4
-                        <p>Mariano Madou -Mecon- </p>
-                    </strong>
-                </h1>
-
-            </div>
-            <!-- Content -->
-        </section>
-        <!--Section: Jumbotron-->
-
-        <!--Section: Magazine v.1-->
-        <div class="row my-3 animated bounceInRight">
-            <div class="col-1"></div>
-            <div class="col-10">
-                <app-cargar-pelicula></app-cargar-pelicula>
-            </div>
-            <div class="col-1"></div>
-        </div>
-        <div class="row my-3">
-            <div class="col-1"></div>
-            <div class="col-10">
-                <app-actor-alta></app-actor-alta>
-            </div>
-            <div class="col-1"></div>
-        </div>
-        <hr class="my-5">
-
-        <section class="wow fadeIn">
-
-            <div class="row my-3 animated bounceInLeft">
-                <div class="col-8">
-                    <h2 class="h1 text-center font-weight-bold">Peliculas
-                    </h2>
                 </div>
-                <div class="col-3">
-                    <app-buscar (mandarTecla)="mapear($event)"></app-buscar>
+                <!-- Content -->
+            </section>
+            <!--Section: Jumbotron-->
+
+            <!--Section: Magazine v.1-->
+            <div class="row my-3 animated bounceInRight">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <app-cargar-pelicula></app-cargar-pelicula>
                 </div>
+                <div class="col-1"></div>
             </div>
-            <!--Section heading-->
-
-
-            <!--Grid row-->
-            <div class="row text-center animated bounceInRight">
-                <app-peliculas [peliculas]="todasPeliculas"></app-peliculas>
+            <div class="row my-3">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <app-actor-alta></app-actor-alta>
+                </div>
+                <div class="col-1"></div>
             </div>
-            <!--Grid row-->
-
-        </section>
-        <!--/Section: Magazine v.1-->
-
-
-    </div>
-</main>
-<!--Main layout-->
+            <hr class="my-5">
+            <section class="wow fadeIn">
+                <div class="row my-3 animated bounceInLeft">
+                    <div class="col-8">
+                        <h2 class="h1 text-center font-weight-bold">Peliculas
+                        </h2>
+                    </div>
+                    <div class="col-3">
+                        <app-buscar (mandarTecla)="mapear($event)"></app-buscar>
+                    </div>
+                </div>
+                <!--Section heading-->
+                <!--Grid row-->
+                <div class="row text-center animated bounceInRight">
+                    <app-peliculas [peliculas]="todasPeliculas"></app-peliculas>
+                </div>
+                <!--Grid row-->
+            </section>
+            <!--/Section: Magazine v.1-->
+        </div>
+    </main>
+    <!--Main layout-->
+</div>

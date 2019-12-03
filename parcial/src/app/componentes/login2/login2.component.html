@@ -1,41 +1,42 @@
-<form class="modal-content animate">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-10 col-lg-12 col-md-9">
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4"> Bienvenido
-                                            <!-- <i class="fas fa-question-circle" (click)="ayuda()"></i> -->
-                                        </h1>
-                                    </div>
-                                    <form class="user">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user validate"
-                                                id="correo" [(ngModel)]="email" name="email"
-                                                aria-describedby="emailHelp" placeholder="Enter Email Address..."
-                                                data-error="Bruh, that email address is invalid" required>
-                                            <div class="help-block with-errors"></div>
+<div class="animation-entrada">
+    <form class="modal-content animate">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-10 col-lg-12 col-md-9">
+                    <div class="card o-hidden border-0 shadow-lg my-5">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <div class="text-center">
+                                            <h1 class="h4 text-gray-900 mb-4"> Bienvenido
+                                                <!-- <i class="fas fa-question-circle" (click)="ayuda()"></i> -->
+                                            </h1>
                                         </div>
+                                        <form class="user">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control form-control-user validate"
+                                                    id="correo" [(ngModel)]="email" name="email"
+                                                    aria-describedby="emailHelp" placeholder="Enter Email Address..."
+                                                    data-error="Bruh, that email address is invalid" required>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
 
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user" id="clave"
-                                                [(ngModel)]="pass" name="pass" placeholder="Password">
-                                        </div>
-                                        <!-- <a (click)="auth.usuarioPass(email, pass)"
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-user" id="clave"
+                                                    [(ngModel)]="pass" name="pass" placeholder="Password">
+                                            </div>
+                                            <!-- <a (click)="auth.usuarioPass(email, pass)"
                                             class="btn btn-success btn-user btn-block">
                                             Login
                                         </a> -->
-                                        <button type="button" class="btn btn-success btn-block text-center mb-2"
-                                        (click)="ingresar()">Login</button>    
-                                    </form>
-                                    <hr>
-                                    <button type="button" class="btn btn-primary btn-block text-center mb-2"
-                                        (click)="irAlRegistro()">Registrese si todavia no posee cuenta</button>
+                                            <button type="button" class="btn btn-success btn-block text-center mb-2"
+                                                (click)="ingresar()">Login</button>
+                                        </form>
+                                        <button type="button" class="btn btn-primary btn-block text-center mb-2"
+                                            (click)="irAlRegistro()">Registrese si todavia no posee cuenta</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -43,5 +44,5 @@
                 </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
+</div>
