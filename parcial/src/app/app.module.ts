@@ -31,7 +31,10 @@ import { PerfilAdminComponent } from './componentes/perfil-admin/perfil-admin.co
 import { PerfilClienteComponent } from './componentes/perfil-cliente/perfil-cliente.component';
 import { PerfilVisitanteComponent } from './componentes/perfil-visitante/perfil-visitante.component';
 import { ActoresComponent } from './componentes/actores/actores.component';
-import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component'; 
+import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component';
+import { NexoSusapellidoComponenteComponent } from './componentes/nexo-susapellido-componente/nexo-susapellido-componente.component';
+import { FiltorSuApellidocomponenteComponent } from './componentes/filtor-su-apellidocomponente/filtor-su-apellidocomponente.component';
+import { ListadoEstrellassuapellidoComponent } from './componentes/listado-estrellassuapellido/listado-estrellassuapellido.component'; 
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor
     PerfilClienteComponent,
     PerfilVisitanteComponent,
     ActoresComponent,
-    DetalleActorComponent
+    DetalleActorComponent,
+    NexoSusapellidoComponenteComponent,
+    FiltorSuApellidocomponenteComponent,
+    ListadoEstrellassuapellidoComponent
   ],
   imports: [
     BrowserModule,

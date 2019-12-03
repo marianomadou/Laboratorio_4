@@ -55,11 +55,15 @@
                 <div class="col-1"></div>
             </div>
             <div class="row my-3  animated bounceInLeft">
+
+                    <a class="navbar-brand waves-effect" href="./nexo" target="_blank">
+                        <strong class="blue-text">nexo</strong>
+                    </a>
                 <div class="col-1"></div>
                 <div class="col-10">
                     <app-actor-alta></app-actor-alta>
                     <!--CARGAR ACTORES CON FOTO-->
-                    <!-- <app-actor-alta-foto></app-actor-alta-foto> -->
+                    <app-actor-alta-foto></app-actor-alta-foto>
                 </div>
                 <div class="col-1"></div>
             </div>
@@ -74,11 +78,12 @@
                         <app-buscar (mandarTecla)="mapear($event)"></app-buscar>
                     </div>
                 </div>
+                <app-nexo-susapellido-componente [actores]="todosActores"></app-nexo-susapellido-componente>
                 <!--Section heading-->
                 <!--MUESTRA LOS ACTORES LISTADOS-->
-                <!-- <div class="row text-center animated bounceInRight">
+                <div class="row text-center animated bounceInRight">
                     <app-actores [actores]="todosActores"></app-actores>
-                </div> -->
+                </div> 
                 <div class="row text-center animated bounceInRight">
                     <app-peliculas [peliculas]="todasPeliculas"></app-peliculas>
                 </div>

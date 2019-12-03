@@ -19,6 +19,7 @@ import {RegistroComponent} from './componentes/registro/registro.component';
 import {PerfilAdminComponent} from './componentes/perfil-admin/perfil-admin.component';
 import {PerfilClienteComponent} from './componentes/perfil-cliente/perfil-cliente.component';
 import {PerfilVisitanteComponent} from './componentes/perfil-visitante/perfil-visitante.component';
+import {NexoSusapellidoComponenteComponent} from './componentes/nexo-susapellido-componente/nexo-susapellido-componente.component'
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path:  'cliente', component:  PerfilClienteComponent, canActivate: [ClienteGuard]},
   { path:  'visitante', component:  PerfilVisitanteComponent},
   { path:  'registro', component:  RegistroComponent},
+  { path:  'nexo', component:  NexoSusapellidoComponenteComponent},
   { path:  'login', component:  Login2Component},
   { path: '', redirectTo: '/login', pathMatch: 'full' }]
 

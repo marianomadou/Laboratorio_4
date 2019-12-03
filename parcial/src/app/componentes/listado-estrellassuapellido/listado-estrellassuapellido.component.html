@@ -1,0 +1,24 @@
+<p>listado-estrellassuapellido works!</p>
+
+<div class=" card-group">
+        <div class="col-md-4 col-sm-12" *ngFor="let actor of actores">
+              
+                <div class="card text-center">
+                        <img class="icon" *ngIf="!actor.fotoActor" src="../../../assets/fotopordefecto.jpg" alt="">
+                        <img class="icon" *ngIf="actor.fotoActor" [src]="actor.fotoActor" alt="">
+                    <!-- <img src="{{actor.fotoActor}}" class="card-img-top" alt="{{actor.fotoActor}}"> -->
+                    <div class="card-body " (click)="elegir(actor)">
+                        <h3>{{actor.nombre}} {{actor.apellido}} </h3>
+                        <h5 class="card-title">Fecha de nacimiento: {{actor.fechaNacimiento}}</h5>
+                        <p class="card-text">País de orígen: {{actor.nacionalidad}}</p>
+                    </div>
+                <!--     <app-boton-eliminar class="ml-3" [actores]="actor"></app-boton-eliminar> -->
+                    <!--   <button class="btn aqua-gradient col-5 " style="padding: 0 ">Modificar</button> -->
+                </div>
+                
+     
+            </div>
+        </div>
+        <app-filtor-su-apellidocomponente (mandarRespuesta)="mapear($event)"></app-filtor-su-apellidocomponente> 
+    
+<!--     <app-detalle-pelicula [pelicula]="peliculaElegida" *ngIf="peliculaElegida" (modal)="ocultar($event)"></app-detalle-pelicula> -->

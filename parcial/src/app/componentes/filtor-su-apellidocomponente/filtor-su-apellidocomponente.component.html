@@ -1,0 +1,6 @@
+<div class="form-group">
+    <select [(ngModel)]="nacionalidad" class="browser-default custom-select"
+        (change)="filterChanged($event.target.value)" id="nacionalidad" name="nacionalidad">
+        <option *ngFor="let actor of actores" [value]="actor.nacionalidad">{{actor.nacionalidad}}</option>
+    </select>
+</div>
