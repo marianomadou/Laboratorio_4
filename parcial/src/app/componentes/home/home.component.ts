@@ -3,6 +3,7 @@ import { PeliculasServicioService } from 'src/app/servicios/peliculas-servicio.s
 import { Pelicula } from 'src/app/clases/pelicula';
 import { MiservicioPrincipalService } from 'src/app/servicios/miservicio-principal.service';
 import { Router } from '@angular/router';
+import { Actor } from 'src/app/clases/actor';
 
 @Component({
   selector: 'app-home',
@@ -13,11 +14,14 @@ export class HomeComponent implements OnInit {
 
   todasPeliculas = [];
   todasPeliculasCopia = [];
+  todosActores = [];
+  todosActoresCopia = [];
   peliculaElegida = Pelicula;
+  actorElegido = Actor;
   busqueda: string;
 
-  constructor(private servicioGenerla: MiservicioPrincipalService,
-    private router: Router) {
+  constructor(public servicioGenerla: MiservicioPrincipalService,
+    public router: Router) {
   }
 
   async ngOnInit() {
@@ -30,6 +34,19 @@ export class HomeComponent implements OnInit {
         console.info(data, " data");
         this.todasPeliculas.push(data);
         this.todasPeliculasCopia.push(data)
+
+      });
+    });
+
+    await this.servicioGenerla.servActores.traerTodoActor().subscribe(actions => {
+      this.todosActores = [];
+      actions.map(a => {
+        const data = a.payload.doc.data() as Pelicula;
+        const id = a.payload.doc.id;
+        data.id = id;
+        console.info(data, " data");
+        this.todosActores.push(data);
+        this.todosActoresCopia.push(data)
 
       });
     });

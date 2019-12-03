@@ -35,14 +35,14 @@ export class PeliculasComponent implements OnInit {
   }
 
   eliminar(peli) {
-    var r = confirm("Press a button!");
+    var r = confirm("Seguro que quiere eliminar?!");
     if (r == true) {
       console.log(
-        "You pressed OK!");
+        "Eliminado!");
         this.servicioGeneral.servPeliculas.borrarUno(peli.id) 
     } else {
       console.log(
-        "You pressed Cancel!");
+        "Accion cancelada");
     }
 
 

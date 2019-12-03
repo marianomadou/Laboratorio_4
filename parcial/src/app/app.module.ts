@@ -29,7 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { PerfilAdminComponent } from './componentes/perfil-admin/perfil-admin.component';
 import { PerfilClienteComponent } from './componentes/perfil-cliente/perfil-cliente.component';
-import { PerfilVisitanteComponent } from './componentes/perfil-visitante/perfil-visitante.component'; 
+import { PerfilVisitanteComponent } from './componentes/perfil-visitante/perfil-visitante.component';
+import { ActoresComponent } from './componentes/actores/actores.component';
+import { DetalleActorComponent } from './componentes/detalle-actor/detalle-actor.component'; 
 
 @NgModule({
   declarations: [
@@ -51,7 +53,9 @@ import { PerfilVisitanteComponent } from './componentes/perfil-visitante/perfil-
     RegistroComponent,
     PerfilAdminComponent,
     PerfilClienteComponent,
-    PerfilVisitanteComponent
+    PerfilVisitanteComponent,
+    ActoresComponent,
+    DetalleActorComponent
   ],
   imports: [
     BrowserModule,

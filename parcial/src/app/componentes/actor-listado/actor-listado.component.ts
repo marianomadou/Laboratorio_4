@@ -14,7 +14,7 @@ export class ActorListadoComponent implements OnInit {
   actoresCopia;
   todasPeliculas;
   todasPeliculasCopia;
-  todasPeliculasMap=[];
+  todasPeliculasMap = [];
   actorElegido;
   actoresSelect;
 
@@ -57,33 +57,30 @@ export class ActorListadoComponent implements OnInit {
         this.actoresSelect.push({
           actor: data.nombre + " " + data.apellido
         });
-      console.log(this.actoresSelect);
-      
-      
-      
+        console.log(this.actoresSelect);
+
+
+
       });
     })
   }
 
-mapear(event)
-{ 
-  this.todasPeliculas= this.todasPeliculasCopia;
-  
-  console.log(this.todasPeliculas);
-  let actor=(<HTMLInputElement> document.getElementById("actor")).value;
+  mapear(event) {
+    this.todasPeliculas = this.todasPeliculasCopia;
 
-  console.log("este es el actor", actor);
-  this.todasPeliculas= this.todasPeliculas.filter(peli => {
-   if(actor==peli.actor){
-     console.log('peli??', peli)
-     this.todasPeliculasMap.push(peli)
-   }
- 
-  });
-    
-  this.todasPeliculas= this.todasPeliculasMap;
-  
-}
+    console.log(this.todasPeliculas);
+    let actor = (<HTMLInputElement>document.getElementById("actor")).value;
+    this.todasPeliculas = this.todasPeliculas.filter(peli => {
+      if (actor == peli.actor) {
+        console.log('peli??', peli)
+        this.todasPeliculasMap.push(peli)
+      }
+
+    });
+
+    this.todasPeliculas = this.todasPeliculasMap;
+
+  }
 
 
 

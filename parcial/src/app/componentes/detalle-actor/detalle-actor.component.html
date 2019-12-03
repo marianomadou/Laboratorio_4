@@ -1,0 +1,76 @@
+<div id="id01" style="display:flex; padding: 15px;" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class=" col-md-12 col-lg-12 col-sm-10" role="document"
+        style=" max-height: calc(200vh - 200px); padding: 2px;    overflow-y: auto;  overflow-x: hidden">
+        <div class="card">
+            <div class="row my-3 animated bounce ml-4">
+                <h2 class="h1 text-center font-weight-bold">Actor Seleccionado</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card-body md-form">
+                        <div class="row">
+                            <div class="col-6">
+                                <input type="text" name="detalle" id="detalle" placeholder="Nombre" class="form-control"
+                                    *ngIf="modificar" [(ngModel)]="actor.nombre">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" name="detalle" id="detalle" placeholder="Apellido"
+                                    class="form-control" *ngIf="modificar" [(ngModel)]="actor.apellido">
+                            </div>
+                            <div class="col-6">
+                                <div class="md-form mb-0">
+                                    <input type="date" id="detalle" name="detalle" min="100" placeholder="actor.fechaDeNacimiento"
+                                        class="form-control" [(ngModel)]="actor.fechaDeNacimiento" required>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                    <div class="md-form mb-0">
+                                        <input type="text" name="detalle" id="detalle" placeholder="Nacionalidad"  class="form-control" [(ngModel)]="actor.nacionalidad" required>
+                                    </div>
+                                </div>
+
+                            <!-- <div class="col-6">
+                                    <input type="number" id="detalle" min="100" placeholder="cantidadPublico" max="10000000"
+                                        name="detalle" class="form-control" *ngIf="modificar"
+                                        [(ngModel)]="actor.cantidadPublico" required>
+                                </div> -->
+                            <!-- <div class="col-6">
+                                    <select class="browser-default custom-select" id="actor" *ngIf="modificar"
+                                        [(ngModel)]="actor.actor" required>
+                                        <option *ngFor="let title of actores" [value]="title">{{title}}</option>
+                                    </select>
+                                </div> -->
+                            <div class="col-6">
+                                <input type="file" name="detalle" id="detalle" (change)="detectFiles($event)"
+                                    placeholder="ingresar una foto" class="form-control" *ngIf="modificar">
+                            </div>
+                            <!-- <div class="col-6">
+                                    <select class="browser-default custom-select" [(ngModel)]="actor.tipo" id="tipo" *ngIf="modificar" required>
+                                        <option value="terror">Terror</option>
+                                        <option value="comedia">Comedia</option>
+                                        <option value="amor">Amor</option>
+                                        <option value="otros">Otros</option>
+                                    </select>
+                                </div> -->
+                        </div>
+                        <div class="col-12 mt-5 text-right mb-2">
+                            <button type="button" class="btn btn-primary text-center mb-2"
+                                (click)="cambiarInfo()">Modificar</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-1">
+
+                </div>
+                <div class="col-5">
+                    <img src="{{actor.fotoActor}}" class="card-img-top" alt="{{actor.fotoActor}}"
+                        style=" max-height: 150px;  margin-left: auto; margin-right: auto;   width: auto">
+                    <h4 class="text-uppercase">Actor: {{actor.nombre}} {{actor.apellido}}</h4>
+                    <p class="item-intro text-muted">Fecha de nacimiento: {{actor.fechaDeNacimiento}}</p>
+                    <p class="item-intro text-muted">Cantidad de Publico: {{actor.nacionalidad}}</p>
+                </div>
+            </div>
+            <button type="button" class="btn btn-danger mt-5 mr-0" (click)="destruir()">Cerrar</button>
+        </div>
+    </div>

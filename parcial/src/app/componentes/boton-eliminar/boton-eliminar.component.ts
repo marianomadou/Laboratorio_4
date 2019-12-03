@@ -2,6 +2,7 @@ import { Component, OnInit , Input} from '@angular/core';
 import { PeliculasServicioService } from 'src/app/servicios/peliculas-servicio.service';
 import { MiservicioPrincipalService } from 'src/app/servicios/miservicio-principal.service';
 import { Pelicula } from 'src/app/clases/pelicula';
+import { Actor } from 'src/app/clases/actor';
 
 @Component({
   selector: 'app-boton-eliminar',
@@ -11,6 +12,7 @@ import { Pelicula } from 'src/app/clases/pelicula';
 export class BotonEliminarComponent implements OnInit {
 
   @Input() peliculas: Pelicula;
+  @Input() actores: Actor;
 
   constructor(private servicioGeneral: MiservicioPrincipalService) { }
 
@@ -23,7 +25,12 @@ export class BotonEliminarComponent implements OnInit {
     if (r == true) {
       console.log(
         "You pressed OK!");
-        this.servicioGeneral.servPeliculas.borrarUno(this.peliculas.id) 
+        if(this.actores){
+          this.servicioGeneral.servActores.borrarUno(this.actores.id)
+        }else if(this.peliculas){
+          this.servicioGeneral.servPeliculas.borrarUno(this.peliculas.id)
+        }
+        
     } else {
       console.log(
         "You pressed Cancel!");

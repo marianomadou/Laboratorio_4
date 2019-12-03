@@ -1,21 +1,20 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Pelicula } from 'src/app/clases/pelicula';
-import { MiservicioPrincipalService } from 'src/app/servicios/miservicio-principal.service';
-import { TipoPelicula } from 'src/app/enums/tipo-pelicula.enum';
 import { Actor } from 'src/app/clases/actor';
 import { FormControl } from '@angular/forms';
+import { MiservicioPrincipalService } from 'src/app/servicios/miservicio-principal.service';
 
 @Component({
-  selector: 'app-detalle-pelicula',
-  templateUrl: './detalle-pelicula.component.html',
-  styleUrls: ['./detalle-pelicula.component.css']
+  selector: 'app-detalle-actor',
+  templateUrl: './detalle-actor.component.html',
+  styleUrls: ['./detalle-actor.component.css']
 })
-export class DetallePeliculaComponent implements OnInit {
-  @Input() pelicula: Pelicula;
+export class DetalleActorComponent implements OnInit {
+
+  @Input() actor: Actor;
   @Output() modal: EventEmitter<any>;
   @Input() control:FormControl;
   modificar;
-  generos: TipoPelicula;
+  //generos: TipoPelicula;
   actores:string [];
   archivo: any;
   opcion;
@@ -23,7 +22,7 @@ export class DetallePeliculaComponent implements OnInit {
   constructor(private servicioGeneral: MiservicioPrincipalService) { 
     this.modal = new EventEmitter();
     this.modificar = true;
-    this.pelicula = new Pelicula();
+    this.actor = new Actor();
   }
 
   ngOnInit() {
@@ -51,23 +50,19 @@ export class DetallePeliculaComponent implements OnInit {
   }
 
   cambiarInfo() {
-    let genero =(<HTMLInputElement> document.getElementById("tipo")).value;
-    let actor=(<HTMLInputElement> document.getElementById("actor")).value;
-
-    console.log('pelicula?', this.pelicula)
+    console.log('actor?', this.actor)
     switch (this.opcion) {
       case 1:
-        this.servicioGeneral.servPeliculas.actualizaUno(this.pelicula);
-
+        this.servicioGeneral.servActores.actualizaUno(this.actor);
         this.modal.emit(false);
         break;
       case 2:
-        this.servicioGeneral.servPeliculas.actualizaConFoto(this.pelicula, this.archivo);
-
+        this.servicioGeneral.servActores.actualizaConFoto(this.actor, this.archivo);
         this.modal.emit(false);
         break;
 
     }
   }
+
 
 }

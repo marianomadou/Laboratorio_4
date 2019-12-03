@@ -12,37 +12,57 @@ export class ActoresServiciosService {
     private storage: AngularFireStorage) { }
 
 
-  enviarActor(peliculaNueva: Actor, archivo) {
+  enviarActor(actorNuevo: Actor, archivo) {
     var porcentaje = 0;
     var url: any;
 
     this.fireStore.collection('actor').add({
-      nombre: peliculaNueva.nombre,
-      apellido: peliculaNueva.apellido,
-      nacionalidad: peliculaNueva.nacionalidad,
-      fechaNacimiento: peliculaNueva.fechaDeNacimiento
+      nombre: actorNuevo.nombre,
+      apellido: actorNuevo.apellido,
+      nacionalidad: actorNuevo.nacionalidad,
+      fechaNacimiento: actorNuevo.fechaDeNacimiento
     });
 
   }
 
-  enviarActorConFoto(peliculaNueva: Actor, archivo) {
+  enviarActorConFoto(actorNuevo: Actor, archivo) {
     var porcentaje = 0;
     var url: any;
-    var file = this.storage.ref('actor/' + peliculaNueva.nombre + '_' + peliculaNueva.apellido).put(archivo);
+    var file = this.storage.ref('actor/' + actorNuevo.nombre + '_' + actorNuevo.apellido).put(archivo);
     file.percentageChanges().subscribe((porcentaje) => {
       porcentaje = Math.round(porcentaje);
       console.log("porcentaje" + porcentaje)
       if (porcentaje == 100) {
-        setTimeout(() => this.storage.ref('actor/' + peliculaNueva.nombre + '_' + peliculaNueva.apellido).getDownloadURL().subscribe((URL) => {
+        setTimeout(() => this.storage.ref('actor/' + actorNuevo.nombre + '_' + actorNuevo.apellido).getDownloadURL().subscribe((URL) => {
           console.log(URL);
           url = URL;
           this.fireStore.collection('actor').add({
             fotoActor: url,
-            nombre: peliculaNueva.nombre,
-            apellido: peliculaNueva.apellido,
-            nacionalidad: peliculaNueva.nacionalidad,
-            fechaNacimiento: peliculaNueva.fechaDeNacimiento
+            nombre: actorNuevo.nombre,
+            apellido: actorNuevo.apellido,
+            nacionalidad: actorNuevo.nacionalidad,
+            fechaNacimiento: actorNuevo.fechaDeNacimiento
           })
+        }), 3000);
+      }
+    });
+
+  }
+
+  actualizaUno(actorActualizar) {
+    console.log(actorActualizar)
+    return this.fireStore.collection('actor').doc(actorActualizar.id).update(actorActualizar);
+  }
+
+  actualizaConFoto(actorActualizar: Actor, archivo) {
+    var lala = this.storage.ref('actor/' + actorActualizar.nombre + '_' + actorActualizar.apellido).put(archivo);
+    lala.percentageChanges().subscribe((porcentaje) => {
+      porcentaje = Math.round(porcentaje);
+
+      if (porcentaje == 100) {
+        setTimeout(() => this.storage.ref('actor/' + actorActualizar.nombre  + '_' + actorActualizar.apellido).getDownloadURL().subscribe((URL) => {
+          actorActualizar.fotoActor = URL;
+          this.actualizaUno(actorActualizar);
         }), 3000);
       }
     });
@@ -53,5 +73,8 @@ export class ActoresServiciosService {
     return this.fireStore.collection('actor').snapshotChanges();
   }
 
+  borrarUno(uid) {
+    return this.fireStore.collection('actor').doc(uid).delete();
+  }
 
 }

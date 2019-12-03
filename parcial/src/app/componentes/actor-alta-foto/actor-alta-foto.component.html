@@ -3,11 +3,11 @@
 
     <!--Section heading-->
     <div class="col-12 text-center">
-        <h2 class="h2-responsive font-weight-bold text-center my-4">Nuevo Actor
+        <h2 class="h2-responsive font-weight-bold text-center my-4">Cargar Actor con foto
             <ng-container></ng-container>
 
-            <mdb-icon id="cargar" fas icon="angle-down" (click)="mostrar()" *ngIf="!ver"></mdb-icon>
-            <mdb-icon fas icon="angle-up" (click)="mostrar()" *ngIf="ver"></mdb-icon>
+            <mdb-icon id="cargar" fas icon="user-plus" (click)="mostrar()" *ngIf="!ver"></mdb-icon>
+            <mdb-icon fas icon="user-minus" (click)="mostrar()" *ngIf="ver"></mdb-icon>
 
         </h2>
     </div>

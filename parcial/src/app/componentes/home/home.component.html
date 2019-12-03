@@ -16,7 +16,7 @@
                 <div style="align-items: flex-end;">
                     <a class="nav-link-dark js-scroll-trigger mt-5"
                         *ngIf="servicioGenerla.autenticar().afAuth.auth.currentUser"
-                        (click)="scrollToElement(portfolio)">{{servicioGenerla.autenticar().afAuth.auth.currentUser.email}}
+                        >{{servicioGenerla.autenticar().afAuth.auth.currentUser.email}}
                     </a>
                    
                     <a class="btn btn-primary btn-xs js-scroll-trigger"
@@ -34,44 +34,38 @@
 <!--Main Navigation-->
 <div class="animation-entrada">
     <!--Main layout-->
-    <main class="mt-5 pt-5">
+    <main class="mt-5 pt-5 mb-5">
         <div class="container">
 
-            <!--Section: Jumbotron-->
-            <section class="card wow animated bounceInLeft ">
-
-                <!-- Content -->
-                <div class="card-body text-white text-center  ">
-
-                    <h1 class="mb-4" style="color: blue;">
-                        <strong>Recuperatorio del Primer Parcial de Laboratorio 4
-                            <p>Mariano Madou -Mecon- </p>
-                        </strong>
-                    </h1>
-
+            
+          
+            <!-- <div class="row my-3 animated bounceInLeft">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <app-actor-listado></app-actor-listado>
                 </div>
-                <!-- Content -->
-            </section>
-            <!--Section: Jumbotron-->
+                <div class="col-1"></div>
+            </div> -->
 
-            <!--Section: Magazine v.1-->
-            <div class="row my-3 animated bounceInRight">
+            <div class="row my-3 animated bounceInLeft">
                 <div class="col-1"></div>
                 <div class="col-10">
                     <app-cargar-pelicula></app-cargar-pelicula>
                 </div>
                 <div class="col-1"></div>
             </div>
-            <div class="row my-3">
+            <div class="row my-3  animated bounceInLeft">
                 <div class="col-1"></div>
                 <div class="col-10">
                     <app-actor-alta></app-actor-alta>
+                    <!--CARGAR ACTORES CON FOTO-->
+                    <!-- <app-actor-alta-foto></app-actor-alta-foto> -->
                 </div>
                 <div class="col-1"></div>
             </div>
             <hr class="my-5">
             <section class="wow fadeIn">
-                <div class="row my-3 animated bounceInLeft">
+                <div class="row my-3 animated bounceInRight">
                     <div class="col-8">
                         <h2 class="h1 text-center font-weight-bold">Peliculas
                         </h2>
@@ -81,7 +75,10 @@
                     </div>
                 </div>
                 <!--Section heading-->
-                <!--Grid row-->
+                <!--MUESTRA LOS ACTORES LISTADOS-->
+                <!-- <div class="row text-center animated bounceInRight">
+                    <app-actores [actores]="todosActores"></app-actores>
+                </div> -->
                 <div class="row text-center animated bounceInRight">
                     <app-peliculas [peliculas]="todasPeliculas"></app-peliculas>
                 </div>
