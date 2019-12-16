@@ -6,7 +6,7 @@
 
 ### Desarrollado con Angular 8 - Bootstrap: 4.3.1 - Firebase: 7.2.1 - Jquery: 3.4.1 - Angular Material
 
-![Laboratorio_4](https://github.com/marianomadou/TPBD2/master/Documentacion/header_app.jpg)
+![Laboratorio_4](https://github.com/marianomadou/TPBD2/blob/master/Documentacion/header_app.jpg)
 
 ## Pruebas con API Marvel
 
