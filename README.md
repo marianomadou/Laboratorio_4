@@ -4,17 +4,17 @@
 
 **Autores: Prof. Villegas Octavio**
 
-### Desarrollado con Angular 8 - Bootstrap: 4.3.1 - Firebase: 7.2.1 - Jquery: 3.4.1 - Angular Material
+## Desarrollado con Angular 8 - Bootstrap: 4.3.1 - Firebase: 7.2.1 - Jquery: 3.4.1 - Angular Material
 
 ![Laboratorio_4](https://github.com/marianomadou/TPBD2/blob/master/Documentacion/header_app.jpg)
 
-## Pruebas con API Marvel
+## PWA con API Marvel
 
 **https://developer.marvel.com/docs**
 
 Firebase deploy en:
 
-### https://marvel-heroes-a5272.firebaseapp.com/characters
+### https://marvel-heroes-a5272.firebaseapp.com/
 
 ![Laboratorio_4](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/marvel_header.jpg)
 
