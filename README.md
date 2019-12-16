@@ -1,17 +1,33 @@
 # Laboratorio_4
-cursada el 4to cuatrimestre con Octavio Villegas
 
-Tarea: Hacer el tour of héroes de @angular/cli
+Laboratorio 4 Tecnicatura Universitaria en Programación. UTN-FRA
 
-ng serve --open
+Autores: Prof. Villegas Octavio
+Desarrollado con Angular 8 - Bootstrap: 4.3.1 - Firebase: 7.2.1 - Jquery: 3.4.1 - Angular Material
 
-ng g c componentes/login
+Pruebas con API Marvel
 
-ng g c componentes/registro
+https://developer.marvel.com/docs
 
-ng g class clases/usuario
+Firebase deploy en:
 
-ng generate module app-routing --flat --module=app
+### https://marvel-heroes-a5272.firebaseapp.com/characters
+
+![Laboratorio_4](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/marvel_header.jpg)
+
+### Sección Personajes
+
+![Laboratorio_4](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/marvel_personajes.jpg)
+
+### Sección Comics
+
+![Laboratorio_4](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/marvel_comics.jpg)
+
+### Sección Series
+
+![Laboratorio_4](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/marvel_series.jpg)
+
+
 
 
 https://marianomadou.github.io/
