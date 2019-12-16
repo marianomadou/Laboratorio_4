@@ -1,0 +1,8 @@
+<div fxFlex fxLayout="column">
+    <div fxLayout="row wrap">
+        <div fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" fxLayout="column"
+            *ngFor="let comic of allComics | async" style="padding: 5px;">
+            <app-comic [comic]="comic"></app-comic>
+        </div>
+    </div>
+</div>

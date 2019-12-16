@@ -1,0 +1,19 @@
+<mat-card mat-card>
+    <mat-card-header>
+        <img mat-card-image src="{{serie.thumbnail.path}}.{{serie.thumbnail.extension}}"
+            alt="{{serie.title}}">
+    </mat-card-header>
+    <mat-list>
+        <mat-card-title>
+            {{serie.title}}
+        </mat-card-title>
+        <mat-divider></mat-divider>
+        <mat-card-actions mat-card-footer>
+            <button mat-button>
+                <a href="{{serie.urls[0].url}}" target="_blank" fxFlex mat-flat-button color="primary">
+                    Detalles de la serie
+                </a>
+            </button>
+        </mat-card-actions>
+    </mat-list>
+</mat-card>

@@ -1,0 +1,23 @@
+img.mat-card-image{
+    background-size: cover;
+    height: auto;
+    margin: auto;
+    min-height: 50vh;
+    max-height: 50vh;
+}
+
+.mat-card{
+    width: 90%;
+    height: auto;
+    margin-bottom: 2%;
+    min-height: 70vh;
+    max-height: 70vh;
+}
+
+
+
+.mat-card-footer {
+    clear: both;
+    position: relative;
+    margin-top: -200px;
+}

@@ -1,0 +1,25 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Tour Of Heroes Marvel - Mariano Madou</span>
+
+      <div style="margin-left: 50vh; background-color: brown;">
+        <button mat-button color="secondary" [matMenuTriggerFor]="aboveMenu">Probar más características de Api Marvel</button>
+        <mat-menu #aboveMenu="matMenu" yPosition="above">
+          <button mat-menu-item [routerLink]="['/characters']">Personajes</button>
+          <button mat-menu-item [routerLink]="['/comics']">Comics</button>
+          <button mat-menu-item [routerLink]="['/series']">Series</button>
+        </mat-menu>
+      </div>
+
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
