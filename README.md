@@ -45,9 +45,13 @@ Los juegos deben guardar toda la información que sea importante para cada juego
 
 Solo se puede ingresar si es un usuario registrado o se registra.
 
+![Sala de Juegos](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/sala_juegos1.jpg)
+
 **A continuación se detalla la forma de corrección del tp , con los elementos excluyentes y el valor de cada punto.**
 
 Se debe lograr 80 puntos para aprobar el TP.
+
+![Sala de Juegos](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/sala_juegos6.jpg)
 
 1. (1 pt) Presentarlo en un servidor WEB . ! Excluyente
 2. (1 pt) Presentarlo en un servidor GitHub .
@@ -67,10 +71,28 @@ Se debe lograr 80 puntos para aprobar el TP.
 **Juegos que debe tener:**
 
 ### Anagrama.(se muestra una palabra desordenada y se debe ingresar la correcta)
+
+![Sala de Juegos](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/sala_juegos2.jpg)
+
 ### Piedra papel tijera.(se debe elegir una de las opciones )
+
+![Sala de Juegos](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/sala_juegos7.jpg)
+
 ### Agilidad Aritmética. (se presenta una cuenta aritmética y el jugador un tiempo para contestar).
+
+![Sala de Juegos](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/sala_juegos8.jpg)
+
 ### Adivina el número.(se debe adivinar el número secreto).
+
+![Sala de Juegos](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/sala_juegos5.jpg)
+
 ### TaTeTi
+
+![Sala de Juegos](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/sala_juegos3.jpg)
+
+### Ahorcado
+
+![Sala de Juegos](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/sala_juegos4.jpg)
 
 
 https://marianomadou.github.io/
