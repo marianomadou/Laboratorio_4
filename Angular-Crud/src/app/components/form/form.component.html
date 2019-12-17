@@ -1,0 +1,14 @@
+<div class="container">
+    <mat-form-field>
+        <input matInput placeholder="Name" name="name" [(ngModel)]="this.customer.selected.name"> 
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="City" name="city" [(ngModel)]="this.customer.selected.city">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Order" name="order" [(ngModel)]="this.customer.selected.order">
+    </mat-form-field>
+    <button mat-flat-button color="primary" (click)="onSaveForm()">
+        <mat-icon>save</mat-icon> Save
+    </button>
+</div>

@@ -1,0 +1,9 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+.container > * {
+    width: 96%;
+    margin-left: 2%;
+}
