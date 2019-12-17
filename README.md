@@ -30,6 +30,7 @@ Firebase deploy en:
 
 ![Laboratorio_4](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/marvel_series.jpg)
 
+---
 
 ## TP Sala de Juegos
 
@@ -94,7 +95,7 @@ Se debe lograr 80 puntos para aprobar el TP.
 
 ![Sala de Juegos](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/sala_juegos4.jpg)
 
+---
 
-https://marianomadou.github.io/
 
-https://github.com/marianomadou/marianomadou.github.io
+
