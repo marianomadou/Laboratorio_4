@@ -1,4 +1,4 @@
-# Laboratorio_4
+# Laboratorio 4
 
 ## Laboratorio 4 Tecnicatura Universitaria en Programación. UTN-FRA
 
@@ -31,6 +31,44 @@ Firebase deploy en:
 ![Laboratorio_4](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/marvel_series.jpg)
 
 
+## TP Sala de Juegos
+
+Github deploy en:
+
+### https://marianomadou.github.io/
+
+**A continuación se detalla la forma de corrección del tp , con los elementos excluyentes y el valor de cada punto.**
+
+Se debe lograr 80 puntos para aprobar el TP.
+
+1. (1 pt) Presentarlo en un servidor WEB . ! Excluyente
+2. (1 pt) Presentarlo en un servidor GitHub .
+3. (2 pt) Estructura de herencia y utilización de polimorfismo. ! Excluyente
+4. (2 pt) Lógica de los juegos. ! Excluyente .
+5. (2 pt) Almacenamiento de datos. ! Excluyente
+6. (2 pt) Juego agregado por el alumno. ! Excluyente
+7. (20 pts.) Experiencia de navegación de la app.
+8. (30 pts.) Diseño de pantallas de los juegos.
+9. (10 pts.) Información clara y completa al mostrar mensajes o hacer acciones.
+10. (30 pts.) Experiencia de usuario en los juegos.
+11. (10 pts.) Utilización de los estilos con variables sass
+12. (10 pts) Utilización de primeNG
+13. (10 pts) Utilización de material design.
+14. (10 pts) Utilización de animaciones(css o con ts)
+
+Tenemos una aplicación de juegos que permite a nuestros usuarios (jugadores) medir sus capacidades cognitivas y motrices, debe ser simple de utilizar y que nos permita tener estadísticas de cada jugador y de cada juego. 
+
+Los juegos deben guardar toda la información que sea importante para cada juego en particular.
+
+Solo se puede ingresar si es un usuario registrado o se registra.
+
+**Juegos que debe tener:**
+
+### Anagrama.(se muestra una palabra desordenada y se debe ingresar la correcta)
+### Piedra papel tijera.(se debe elegir una de las opciones )
+### Agilidad Aritmética. (se presenta una cuenta aritmética y el jugador un tiempo para contestar).
+### Adivina el número.(se debe adivinar el número secreto).
+### TaTeTi
 
 
 https://marianomadou.github.io/
