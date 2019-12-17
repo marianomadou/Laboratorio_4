@@ -37,6 +37,14 @@ Github deploy en:
 
 ### https://marianomadou.github.io/
 
+### Repositorio:  https://github.com/marianomadou/Laboratorio_4/tree/master/TP-Sala-de-Juegos-ANGULAR--master
+
+Tenemos una aplicación de juegos que permite a nuestros usuarios (jugadores) medir sus capacidades cognitivas y motrices, debe ser simple de utilizar y que nos permita tener estadísticas de cada jugador y de cada juego. 
+
+Los juegos deben guardar toda la información que sea importante para cada juego en particular.
+
+Solo se puede ingresar si es un usuario registrado o se registra.
+
 **A continuación se detalla la forma de corrección del tp , con los elementos excluyentes y el valor de cada punto.**
 
 Se debe lograr 80 puntos para aprobar el TP.
@@ -55,12 +63,6 @@ Se debe lograr 80 puntos para aprobar el TP.
 12. (10 pts) Utilización de primeNG
 13. (10 pts) Utilización de material design.
 14. (10 pts) Utilización de animaciones(css o con ts)
-
-Tenemos una aplicación de juegos que permite a nuestros usuarios (jugadores) medir sus capacidades cognitivas y motrices, debe ser simple de utilizar y que nos permita tener estadísticas de cada jugador y de cada juego. 
-
-Los juegos deben guardar toda la información que sea importante para cada juego en particular.
-
-Solo se puede ingresar si es un usuario registrado o se registra.
 
 **Juegos que debe tener:**
 
