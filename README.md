@@ -32,6 +32,19 @@ Firebase deploy en:
 
 ---
 
+## Angular Crud con Material
+
+Firebase deploy en:
+
+### https://relevamientovisual-f186f.firebaseapp.com/home/
+
+![CRUD Angular Material](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/crud1.jpg)
+
+![CRUD Angular Material](https://github.com/marianomadou/Laboratorio_4/blob/master/Documentacion/crud2.jpg)
+
+
+---
+
 ## TP Sala de Juegos
 
 Github deploy en:
@@ -143,7 +156,7 @@ Adicionalmente se podrán descargar los datos de las encuestas en formato XLSX y
 
 <a href="https://www.youtube.com/embed/vgdLLdCj09c" target="_blank"><img src="https://github.com/marianomadou/Laboratorio_4/blob/master/SegundoParcial/capturas_de_pantallas/perfil_admin.JPG" alt="pantalla de logueo" width="882" height="487"/></a>
 
-
+---
 
 
 
