@@ -1,0 +1,54 @@
+<div class="container d-flex justify-content-center align-items-center">
+    <div *ngIf="!noHayPedido!">
+        <div *ngFor="let pedido of pedidos">
+            <div *ngIf="pedido.estado=='pendiente' && perfil!='admin'">
+                <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+            </div>
+            <!-- <ngb-timepicker [(ngModel)]="time"></ngb-timepicker> -->
+            <hr>
+            <span class="badge badge-primary" *ngIf="perfil=='admin'">Área: {{pedido.area | areas}} </span>
+            <h5 class="text-left" style="color: blanchedalmond;"> Estado del pedido:<strong> {{pedido.estado}} </strong>
+            </h5>
+            <hr>
+            <h5 class="text-left" style="color: blanchedalmond;" *ngIf="pedido.estado=='pendiente' && perfil!='admin'">
+                Tiempo estimado de preparación:
+                <button type="button" class="full btn btn-info btn-sm"
+                    *ngIf="pedido.estado=='pendiente' && perfil!='admin'" (click)="tomarPedido(pedido, time.minute)">
+                    {{time.minute | json}}</button></h5>
+            <br>
+            <h5 class="text-left">
+                <button type="button" class="btn btn-light btn-xs  btn-rounded waves-effect"
+                    *ngIf="pedido.estado=='enPreparacion' && perfil!='admin'"
+                    (click)="terminarPedido('terminado', pedido)">Enviar Comida</button>
+                <!-- <button type="button" class="btn btn-danger btn-sm" (click)="eliminarPedido(pedido)">Eliminar</button> -->
+            </h5>
+
+            <app-mini-detalle-mesa [mesaUID]="pedido.mesa" *ngIf="detalleMesa "></app-mini-detalle-mesa>
+            <div class="row">
+                <div class="card col-md-12" *ngFor="let producto2 of pedido.productos">
+                    <div class=" card-body">
+                        <h5> {{producto2.nombre}}</h5>
+                        <p style="font-weight: bold; color:rgb(236, 205, 26)" *ngIf="pedido.estado=='enPreparacion'">
+                            Estado
+                            {{pedido.estado}} </p>
+                        <p style="font-weight: bold; color:rgb(46, 165, 42)" *ngIf="pedido.estado=='pendiente'">Estado
+                            {{pedido.estado}} </p>
+                        <p style="font-weight: bold; color:rgb(9, 88, 6)" *ngIf="pedido.estado=='terminado'">Estado
+                            {{pedido.estado}} </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <div *ngIf="noHayPedido">
+        <div class="row">
+            <div class="card col-8">
+                <h5 style="padding: 15px;">
+                    No hay pedidos pendientes
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>

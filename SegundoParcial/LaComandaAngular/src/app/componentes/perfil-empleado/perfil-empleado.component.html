@@ -1,0 +1,75 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+</ngx-spinner>
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark brown">
+    <mdb-navbar-brand>
+        <a class="navbar-brand" (click)="vista(0)">
+            <img src="../../../assets/favicon_grande.png" height="30" class="d-inline-block align-top" alt=""
+                (click)="vista(0)">
+            <span style="color: #fff8d8; margin-left: 15px; text-transform: capitalize;" class="font-small"
+                *ngIf="servicio.autenticar().afAuth.auth.currentUser">Dinner - <span class="strong"
+                    style="font-weight: bold">Área:
+                    {{perfil | areas}} </span></span>
+        </a>
+    </mdb-navbar-brand>
+    <mdb-icon fas icon="angle-left" size="lg" class="text-white mr-auto d-flex d-md-none align-self-center"></mdb-icon>
+    <links>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown" dropdown *ngIf="this.servicio.mesas().mesaActual!= null">
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
+                    mdbWavesEffect>
+                    Pedidos<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" (click)="vista(6)">Pendientes</a>
+                </div>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" (click)="vista(6)">Terminados</a>
+                </div>
+            </li>
+        </ul>
+        <div class="row col-3">
+            <span class="mr-3  mt-1 text-gray-600 small" style="color: #fff8d8"
+                *ngIf="servicio.autenticar().afAuth.auth.currentUser">{{servicio.autenticar().afAuth.auth.currentUser.email}}
+            </span>
+            <span class="mr-3   text-gray-600 small" style="color: #fff8d8"
+                *ngIf="servicio.autenticar().afAuth.auth.currentUser"><img
+                    src="{{servicio.usuarios().traerUsuarioActual().photoURL}}" class="md-avatar rounded-circle" alt=""
+                    style="max-width: 30px;"></span>
+        </div>
+        <div class="row col-3">
+
+            <span class="mr-3 text-gray-600 small" style="color: #fff8d8"
+                *ngIf="servicio.autenticar().afAuth.auth.currentUser"
+                (click)="servicio.autenticar().signOut()">Logout</span>
+        </div>
+    </links>
+</mdb-navbar>
+
+<div id="imgBlurred" class="animated fadeIn"></div>
+
+<main>
+    <div class="container-fluid top ">
+        <div class="row slide-in-blurred-top" style="margin-top: 5%">
+            <div class="col-3  col-sm-1 col-xs-1 slide-in-blurred-top"></div>
+            <div class="col-6 col-sm-10 col-xs-10 slide-in-blurred-top">
+                <app-listado-pedidos class="slide-in-blurred-top" *ngIf="perfil=='mozo'"></app-listado-pedidos>
+                <app-listado-pedidos class="slide-in-blurred-top" *ngIf="perfil=='comida'"></app-listado-pedidos>
+                <app-listado-pedidos class="slide-in-blurred-top" *ngIf="perfil=='cerveza'"></app-listado-pedidos>
+                <app-listado-pedidos class="slide-in-blurred-top" *ngIf="perfil=='barra'"></app-listado-pedidos>
+                <app-listado-pedidos class="slide-in-blurred-top" *ngIf="perfil=='postre'"></app-listado-pedidos>
+            </div>
+            <div class="col-3  col-sm-1 col-xs-1"></div>
+        </div>
+    </div>
+</main>
+<footer class="page-footer text-center font-small mt-4 wow fadeIn" style="background-color: #433334;">
+    <div class="pb-4">
+        <a href="https://github.com/marianomadou" target="_blank">
+            <i class="fab fa-github mr-3"></i>
+        </a>
+    </div>
+    <div class="footer-copyright py-3">
+        © 2019 Copyright:
+        <a href="http://marianomadou.com.ar" target="_blank"> marianomadou.com.ar</a>
+    </div>
+</footer>

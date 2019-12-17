@@ -1,0 +1,164 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: rgb(243, 218, 109)">Aguarde mientras se procesa la transacción...</p>
+</ngx-spinner>
+<!--Navbar-->
+<div style="background-color: #433334;">
+    <mdb-navbar SideClass="navbar navbar-expand-lg">
+        <mdb-navbar-brand>
+            <a class="navbar-brand" (click)="ngOnInit()">
+                <img src="../../../assets/favicon_grande.png" height="30" class="d-inline-block align-top" alt=""
+                    (click)="vista(0)">
+            </a>
+        </mdb-navbar-brand>
+        <mdb-icon fas icon="angle-left" size="lg" class="text-white mr-auto d-flex d-md-none align-self-center">
+        </mdb-icon>
+        <links>
+            <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item dropdown" dropdown>
+                    <a class="nav-link waves-light" style="color: #fff8d8" (click)="ngOnInit()"> Cliente: </a>
+                </li>
+                <li class="nav-item dropdown" dropdown>
+                    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
+                        mdbWavesEffect>
+
+                        <i style="color: #fff8d8" class="fas fa-users-cog"></i>
+                        <span class="caret" style="color: #fff8d8"></span></a>
+                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu"
+                        style="color: black">
+                        <a class="dropdown-item waves-light" (click)="vista(6)">Modificar Perfil</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" dropdown *ngIf="this.servicio.mesas().mesaActual!= null">
+                    <a dropdownToggle mdbWavesEffect type="button" style="color: black"
+                        class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                        Mesa<span class="caret"></span></a>
+                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                        <a class="dropdown-item waves-light" (click)="vista(2)">Mi mesa actual</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" dropdown *ngIf="this.servicio.mesas().mesaActual!= null">
+                    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
+                        mdbWavesEffect>
+                        Pedidos<span class="caret"></span></a>
+                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                        <a class="dropdown-item waves-light" (click)="vista(7)"> Lista de Precios
+                        </a>
+                    </div>
+                </li> -->
+            </ul>
+            <!-- <ul class="navbar-nav text-uppercase ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" (click)="scrollToElement(solicitudmesa)">Solicitar mesa</a>
+                </li>
+            </ul> -->
+            <div class="row col-3">
+                <span class="mr-3  mt-1 text-gray-600 small" style="color: #fff8d8"
+                    *ngIf="servicio.autenticar().afAuth.auth.currentUser">{{servicio.autenticar().afAuth.auth.currentUser.email}}
+                </span>
+                <span class="mr-3   text-gray-600 small" style="color: #fff8d8"
+                    *ngIf="servicio.autenticar().afAuth.auth.currentUser"><img
+                        src="{{servicio.usuarios().traerUsuarioActual().photoURL}}" alt=""
+                        class="md-avatar rounded-circle"></span>
+            </div>
+            <div class="row col-3">
+                <span class="mr-3 text-gray-600 small" style="color: #fff8d8"
+                    *ngIf="servicio.autenticar().afAuth.auth.currentUser"
+                    (click)="servicio.autenticar().signOut()">Logout</span>
+            </div>
+        </links>
+    </mdb-navbar>
+</div>
+<div class="viewIMAGENES">
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+        <div class="text-center white-text mx-5 wow fadeIn" style="margin-top: 50px;">
+            <h1 class="mx-5">
+                <strong>Bienvenido a Dinner</strong>
+            </h1>
+            <p class="mb-4 d-none d-md-block">
+                <strong>Dinner es uno de los restaurantes más famosos del mundo y se inspira en la fascinación que
+                    siente Heston Blumenthal por la gastronomía histórica. El concepto de Dinner, concebido por primera
+                    vez a finales de los años noventa, surgió de la fascinación de Blumenthal por los sabrosos helados
+                    de finales del siglo XIX, la teatralidad de la experiencia gastronómica tudor y los platos nombrados
+                    en Alicia en el País de las Maravillas de Lewis Carroll.</strong>
+            </p>
+            <a (click)="scrollToElement(solicitudmesa)" class="btn btn-outline-white btn-lg">
+                Solicite aquí una Mesa para poder ser atendido
+                <i class="fas fa-graduation-cap ml-2"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<main>
+    <div class="container">
+        <section class="mt-5 wow fadeIn" #solicitudmesa>
+            <h3 class="h3 text-center mb-5">Solicitud y estado de su mesa</h3>
+            <div class="row mt-1">
+                <div class="col-md-3 mt-2 mb-4">
+                    <img src="../../../assets/back10.jpg" class="img-fluid z-depth-1-half rounded" alt="">
+                    <div class="col-10 mt-2">
+                        <h4 class="feature-title mt-3">En esta sección podrá solicitar una mesa a los mozos.</h4>
+                        <p class="grey-text">Una vez asignada la mesa podrá ver el estado de su pedido de manera
+                            detallada.</p>
+                    </div>
+                </div>
+                <div class="col-md-9 mt-2 mb-4" [ngSwitch]="opcion">
+                    <!--  <app-encuesta></app-encuesta> solo para testing-->
+                    <app-pedir-mesa *ngSwitchCase="1" (terminar)="volverPedirMesa($event)"></app-pedir-mesa>
+                    <app-detalle-mesa *ngSwitchCase="2" (terminar)="cerrarMesa($event)"></app-detalle-mesa>
+                    <div *ngSwitchCase="4">
+                        <div class="row" *ngIf="this.servicio.mesas().mesaActual.estado!='inicioServicio'">
+                            <div class="col-12">
+                                <h4 class="feature-title mt-1">
+                                    {{this.servicio.mesas().mesaActual.estado | estadosMesaCliente}}</h4>
+                                <p class="feature-title mt-1 mb-2 ml-3">Mientras espera le recomendamos escuchar
+                                    esta lista de música que Dinner tiene preparada para usted.</p>
+                                <div class="col-md-8 flex-end ml-5">
+                                    <div class="embed-responsive embed-responsive-16by9 p-2">
+                                        <iframe width="600" src="https://www.youtube.com/embed/r0DRat-Ytng"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="this.servicio.mesas().mesaActual.estado =='inicioServicio'">
+                            <app-listado-precios (pedidoEmit)="pedido($event)"></app-listado-precios>
+                        </div>
+
+                    </div>
+                    <div *ngSwitchCase="5">
+                        <div class="row">
+                            <div class="col-12">
+                                <h2 class=" animated">
+                                    {{this.servicio.mesas().mesaActual.estado | estadosMesaCliente}}</h2>
+                                <app-detalle-cuenta *ngIf="this.servicio.mesas().mesaActual.estado =='pagando'">
+                                </app-detalle-cuenta>
+                            </div>
+                            <div class="col-8">
+                                    <app-encuesta *ngIf="!servicio.usuarios().traerUsuarioActual().registrado">
+                                    </app-encuesta>
+                            </div>
+                        </div>
+                    </div>
+                    <app-listado-producto *ngSwitchCase="7"></app-listado-producto>
+                    <app-listado-precios *ngSwitchCase="6" (pedidoEmit)="pedido($event)"></app-listado-precios>
+                    <app-confirmar-pedido *ngSwitchCase="61" [pedido]="pedidoAConfirmar.productos"
+                        (pedidoEmit)=" pedidoConfirmadoE($event)"></app-confirmar-pedido>
+                </div>
+            </div>
+        </section>
+        <hr class="my-5">
+    </div>
+</main>
+<footer class="page-footer text-center font-small mt-4 wow fadeIn" style="background-color: #433334;">
+    <div class="pb-4">
+        <a href="https://github.com/marianomadou" target="_blank">
+            <i class="fab fa-github mr-3"></i>
+        </a>
+    </div>
+    <div class="footer-copyright py-3">
+        © 2019 Copyright:
+        <a href="http://marianomadou.com.ar" target="_blank"> marianomadou.com.ar</a>
+    </div>
+</footer>

@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/tp2Lab4",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+</ngx-spinner>
+
+<!--Navbar-->
+<div style="background-color: #433334;">
+    <mdb-navbar SideClass="navbar navbar-expand-lg">
+        <mdb-navbar-brand>
+            <a class="navbar-brand" (click)="ngOnInit()">
+                <img src="../../../assets/favicon_grande.png" height="30" class="d-inline-block align-top" alt=""
+                    (click)="vista(0)">
+            </a>
+        </mdb-navbar-brand>
+        <mdb-icon fas icon="angle-left" size="lg" class="text-white mr-auto d-flex d-md-none align-self-center">
+        </mdb-icon>
+        <links>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown" dropdown>
+                    <a class="dropdown-item waves-dark" style="color: #fff8d8" mdbWavesEffect
+                        (click)="vista(1)">Empleados</a>
+                </li>
+                <li class="nav-item dropdown" dropdown>
+                    <a class="dropdown-item waves-dark" style="color: #fff8d8" mdbWavesEffect
+                        (click)="vista(3)">Clientes</a>
+                </li>
+                <li class="nav-item dropdown" dropdown>
+                    <a class="dropdown-item waves-dark" style="color: #fff8d8" mdbWavesEffect
+                        (click)="vista(9)">Pedidos</a>
+                </li>
+                  <li class="nav-item dropdown" dropdown>
+                    <a class="dropdown-item waves-dark" style="color: #fff8d8" mdbWavesEffect
+                        (click)="vista(10)">Estadísticas</a>
+                </li>
+                <li class="nav-item dropdown" dropdown>
+                    <a dropdownToggle mdbWavesEffect type="button" style="color: #fff8d8"
+                        class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                        Mesa<span class="caret"></span></a>
+                    <div *dropdownMenu style="color: #fff8d8" class="dropdown-menu dropdown dropdown-primary"
+                        role="menu">
+                        <a class="dropdown-item waves-light" style="color: #3d3200" (click)="vista(5)">Listados</a>
+                        <a class="dropdown-item waves-light" style="color: #3d3200" (click)="vista(6)">Alta mesa</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown" dropdown>
+                    <a dropdownToggle mdbWavesEffect type="button" style="color: #fff8d8"
+                        class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                        Productos<span class="caret"></span></a>
+                    <div *dropdownMenu style="color: #fff8d8" class="dropdown-menu dropdown dropdown-primary"
+                        role="menu">
+                        <a class="dropdown-item waves-light" style="color: #3d3200" (click)="vista(7)">Listados</a>
+                        <a class="dropdown-item waves-light" style="color: #3d3200" (click)="vista(8)">Alta producto</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="row col-3">
+                <span class="mr-3  mt-1 text-gray-600 small" style="color: #fff8d8"
+                    *ngIf="servicio.autenticar().afAuth.auth.currentUser">{{servicio.autenticar().afAuth.auth.currentUser.email}}
+                </span>
+                <span class="mr-3   text-gray-600 small" style="color: #fff8d8"
+                    *ngIf="servicio.autenticar().afAuth.auth.currentUser"><img
+                        src="{{servicio.usuarios().traerUsuarioActual().photoURL}}" class="md-avatar rounded-circle"
+                        alt=""></span>
+
+            </div>
+            <div class="row col-3">
+
+                <span class="mr-3 text-gray-600 small" style="color: #fff8d8"
+                    *ngIf="servicio.autenticar().afAuth.auth.currentUser"
+                    (click)="servicio.autenticar().signOut()">Logout</span>
+            </div>
+        </links>
+    </mdb-navbar>
+</div>
+<div id="imgBlurred" class="animated fadeIn"></div>
+<main>
+    <div class="row col-12 top" style="margin-top: 5%" [ngSwitch]="opcion">
+
+        <div class="col-12 slide-in-blurred-top">
+            <app-listado-usuarios class="col-12 slide-in-blurred-top" *ngSwitchCase="3" [filtro]="'cliente'">
+            </app-listado-usuarios>
+            <app-listado-mesa class="col-12 slide-in-blurred-top" *ngSwitchCase="5"></app-listado-mesa>
+            <app-listado-usuarios class="col-12 slide-in-blurred-top" *ngSwitchCase="1" [filtro]="'todos'">
+            </app-listado-usuarios>
+            <app-alta-usuario class="col-12 slide-in-blurred-top" *ngSwitchCase="4"> </app-alta-usuario>
+            <app-alta-producto class="col-12 slide-in-blurred-top" *ngSwitchCase="8"></app-alta-producto>
+            <app-listado-producto class="col-12 slide-in-blurred-top" *ngSwitchCase="7"></app-listado-producto>
+            <app-alta-mesa class="col-12 slide-in-blurred-top" *ngSwitchCase="6"></app-alta-mesa>
+            <app-listado-pedidos class="col-12 slide-in-blurred-top" *ngSwitchCase="9"></app-listado-pedidos>
+            <app-listado-encuestas class="col-12 slide-in-blurred-top" *ngSwitchCase="10"></app-listado-encuestas>
+        </div>
+    </div>
+</main>
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn" style="background-color: #433334;">
+    <div class="pb-4">
+        <a href="https://github.com/marianomadou" target="_blank">
+            <i class="fab fa-github mr-3"></i>
+        </a>
+    </div>
+    <div class="footer-copyright py-3">
+        © 2019 Copyright:
+        <a href="http://marianomadou.com.ar" target="_blank"> marianomadou.com.ar</a>
+    </div>
+</footer>

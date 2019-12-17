@@ -1,0 +1,158 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+</ngx-spinner>
+
+
+
+
+<!--Grid column-->
+<div class="container col-12 d-flex justify-content-center mt-3" *ngIf="ver">
+    <!-- Outer Row -->
+    <div class="row mt-1">
+
+        <div class="card o-hidden border-0 shadow-lg mt-2">
+            <div class="card-body p-0">
+                <div class="col-12">
+                    <div class="p-5">
+                        <form class="user pl-3 pr-3">
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-user validate" id="correo"
+                                    [(ngModel)]="email" name="email" aria-describedby="emailHelp"
+                                    placeholder="Ingrese su email..." data-error="Email mal ingresado" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="password" class="form-control form-control-user" id="clave"
+                                    [(ngModel)]="pass" name="pass" placeholder="Password">
+                            </div>
+                            <div class="form-group animated fadeInDown" *ngIf="crearNuevo">
+                                <input type="password" class="form-control form-control-user" id="clave"
+                                    [(ngModel)]="pass2" name="pass" placeholder="Password">
+                            </div>
+                            <div class="form-group animated fadeInDown" *ngIf="crearNuevo">
+                                <input type="file" class="form-control form-control-user" id="file"
+                                    (change)=" detectFiles($event)">
+                            </div>
+                            <div class="btn-group col-12  animated fadeInDown" role="group" aria-label="Basic example"
+                                *ngIf="!crearNuevo">
+                                <button (click)="entrar()" type="button" class="btn btn-primary btn-circle btn-xl"
+                                    *ngIf="!crearNuevo">
+                                    Login </button>
+                            </div>
+                            <hr>
+                            <div class="btn-group col-12  animated fadeInDown" role="group" aria-label="Basic example"
+                                *ngIf="!crearNuevo">
+                                <button type="button" class="btn btn-default btn-circle btn-xl" (click)="usuario(8)" *ngIf="!crearNuevo">
+                                    Login con Google</button>
+                            </div>
+                            <hr>
+
+                            <div class="btn-group col-12 animated fadeInDown" role="group" aria-label="Basic example"
+                                *ngIf="!crearNuevo">
+                                <!--                                 <button (click)="ingresar()" type="button" class="btn btn-info btn-block"
+                                    *ngIf="!crearNuevo">
+                                    Invitado
+                                </button> -->
+                                <button (click)="crear()" type="button" class="btn btn-danger btn-circle btn-xl"
+                                    *ngIf="!crearNuevo">
+                                    Registro
+                                </button>
+                            </div>
+
+                            <div *ngIf="googleCp =='true'">
+                                <div class="btn-group col-12 animated fadeInDown" role="group"
+                                    aria-label="Basic example" *ngIf="crearNuevo">
+                                    <button type="button" (click)=" elegirCaptcha('google')" class="btn btn-info rounded">
+                                        Captcha Google
+                                    </button>
+
+                                    <button type="button" (click)="elegirCaptcha('personal')" class="btn btn-success rounded">
+                                        Captcha Personal
+                                    </button>
+                                </div>
+                            </div>
+                            <div *ngIf='googleCp!=true'>
+                                <div class="row" *ngIf="crearNuevo">
+                                    <div class="col-1">
+
+                                    </div>
+                                    <div class="col-10" *ngIf="googleCp =='google'">
+                                        <re-captcha (resolved)="resolved($event)"
+                                            siteKey="6Ld0x8QUAAAAAKovkTQJYNS5PASrPH6EgutN7DtR">
+                                        </re-captcha>
+                                    </div>
+                                    <div class="col-10" *ngIf="googleCp=='personal'">
+                                        <h4 style="font-size: 12pt;">Qué ve en la imagen? <i class="fas fa-redo"
+                                                (click)=" refresh()"></i></h4>
+                                        <img src={{random1}} (click)=" cabshaFunctio()" style="height: 80px;">
+                                        <input type="text" class="form-control form-control-user" id="capt"
+                                            [(ngModel)]="capt" (change)='cabshaFunctio()' name="capt"
+                                            aria-describedby="emailHelp"
+                                            placeholder="responda el captcha para registrarse"
+                                            data-error="Sos ciego o que la puta madre?" required>
+                                    </div>
+                                    <div class="col-1">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+
+                            <div class="btn-group col-12 animated fadeInDown" role="group" aria-label="Basic example"
+                                *ngIf="crearNuevo">
+                                <button (click)="crearValidar()" class="btn btn-danger btn-circle btn-xl" [disabled]="!cabsha">
+                                    Crear Usuario
+                                </button>
+                            </div>
+                            <div class="btn-group col-12 animated fadeInDown" role="group" aria-label="Basic example"
+                                *ngIf="crearNuevo">
+
+                               <!--  <button (click)=" entrarConGooGle()" class="btn btn-deep-purple btn-block"
+                                    *ngIf="crearNuevo">
+                                    <i class="fab fa-google fa-fw"></i> Login Google
+                                </button> -->
+                                <!--                                                 <button (click)="entrarConGithub()" class="btn btn btn-dark btn-block"
+                                                    *ngIf="crearNuevo">
+                                                    <i class="fab fa-github"></i> Login Github
+                                                </button> -->
+                            </div>
+                            <div class="btn-group col-12 animated fadeInDown" role="group" aria-label="Basic example"
+                                *ngIf="crearNuevo">
+                                <!-- <button (click)="volver()" class=" btn btn btn-info btn-block" *ngIf="crearNuevo">
+                                    volver
+                                </button> -->
+                            </div>
+
+
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="col-12 d-flex justify-content-center" *ngIf="!crearNuevo">
+
+    <div *ngIf="mostrarTest">
+
+        <button type="button" class="btn btn-primary btn-circle btn-xl" (click)="usuario(1)" *ngIf="!crearNuevo"><i
+                class="fas fa-portrait"></i>
+        </button>
+        <button type="button" class="btn btn-success  btn-circle btn-xl" (click)="usuario(2)" *ngIf="!crearNuevo"><i
+                class="fas fa-user-friends"></i>
+        </button>
+        <button type="button" class="btn btn-info btn-circle btn-xl" (click)="usuario(4)" *ngIf="!crearNuevo">
+            <i class="fas fa-beer"></i>
+        </button>
+        <button type="button" class="btn btn-warning btn-circle btn-xl" (click)="usuario(5)" *ngIf="!crearNuevo"><i
+                class="fas fa-user-tie"></i>
+        </button>
+        <button type="button" class="btn btn-danger btn-circle btn-xl" (click)="usuario(6)" *ngIf="!crearNuevo">
+            <i class="fas fa-hamburger"></i>
+        </button>
+
+    </div>
+</div>

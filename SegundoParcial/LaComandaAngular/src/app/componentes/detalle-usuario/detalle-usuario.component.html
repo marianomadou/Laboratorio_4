@@ -1,0 +1,45 @@
+<div id="id01" style="display:flex; padding: 15px;" class="modal">
+    <span (click)="destruir()" class="close h1" title="Close Modal" style="font-size: 60pt;text-align: left">×</span>
+
+    <div class="col-6   animated fadeInUp">
+        <div class="card">
+            <div class="row my-3 animated bounce ml-4">
+                <h2 class="h1 text-center font-weight-bold">Usuario Elegido
+                </h2>
+            </div>
+
+            <div class=" card-body ">
+                <h3>{{producto.email}}</h3>
+            </div>
+
+
+
+
+            <div class="card-body md-form">
+                <h1>Cambio Perfil</h1>
+                <div class="row">
+                    <div class="form-group">
+                        <select id="local" class="browser-default custom-select" (change)="onChangePerfil($event.target.value)">
+                        <option value="anonimo"> </option>
+                        <option value="admin">Admin</option>
+                        <option value="cliente">Cliente</option>
+                        <option value="mozo">Mozo</option>
+                        <option value="barra">Tragos y Vinos</option>
+                        <option value="cerveza">Patio Cervecero</option>
+                        <option value="postre">CandyBar</option>
+                        <option value="comida">Cocina</option>
+                    </select>
+                    </div>
+                    <div class="col-3">
+                        <button type="button" class="btn btn-secondary" (click)="modificarLocal()">Modificar</button>
+                    </div>
+                </div>
+            </div>
+            <!--        <div class="col-3">
+            <button type="button" class="btn btn-secondary" (click)="eliminarUsuario()">Eliminar Usuario</button>
+        </div> -->
+
+        </div>
+    </div>
+
+</div>

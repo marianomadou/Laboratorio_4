@@ -1,0 +1,50 @@
+<div style="text-align:center">
+        <h2 class="h2-responsive font-weight-bold text-center my-4" style="color: #fff8d8">Alta de mesa</h2>
+
+
+    <h2 style="color:aliceblue"></h2>
+
+    <form style="margin-top: 40px;" [formGroup]="angForm" (ngSubmit)="onSubmitProducto()">
+        <div color="light">
+            <label class="center-block">Numero:
+                <input class="form-control" type="number" formControlName="numero">
+            </label>
+        </div>
+        <div *ngIf="angForm.controls['numero'].invalid && (angForm.controls['numero'].dirty || angForm.controls['numero'].touched)"
+            class="alert alert-danger ">
+            <div *ngIf="angForm.controls['numero'].errors.required">
+                Numero is required.
+            </div>
+        </div>
+
+        <div color="light">
+            <label class="center-block">Comensales:
+                <input class="form-control" maxlength="100" name="cantidadComensales" type="number"
+                    placeholder="cantidadComensales" formControlName="cantidadComensales">
+            </label>
+
+        </div>
+        <div *ngIf="angForm.controls['cantidadComensales'].invalid && (angForm.controls['cantidadComensales'].dirty || angForm.controls['cantidadComensales'].touched)"
+            class="alert alert-danger ">
+            <div *ngIf="angForm.controls['cantidadComensales'].errors.required">
+                cantidadComensales is required.
+            </div>
+        </div>
+        <hr>
+        <button type="submit"> Ingresar Nueva Mesa </button>
+
+
+
+
+        <br>
+
+    </form>
+
+
+
+
+
+
+    <!--     <p>Form value: {{ angForm.value | json }}</p>
+    <p>Form status: {{ angForm.status | json }}</p> -->
+</div>

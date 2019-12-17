@@ -1,0 +1,82 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+</ngx-spinner>
+
+<body>
+
+
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark brown">
+        <mdb-navbar-brand>
+            <a class="navbar-brand" (click)="vista(0)">
+                <img src="../../../assets/favicon_grande.png" height="30" class="d-inline-block align-top" alt=""
+                    (click)="vista(0)">
+                <span style="color: #fff8d8; margin-left: 15px; text-transform: capitalize;" class="font-small"
+                    *ngIf="servicio.autenticar().afAuth.auth.currentUser">Dinner - Perfil:
+                    {{servicio.usuarios().traerUsuarioActual().perfil}}</span>
+            </a>
+        </mdb-navbar-brand>
+        <mdb-icon fas icon="angle-left" size="lg" class="text-white mr-auto d-flex d-md-none align-self-center">
+        </mdb-icon>
+        <links>
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item dropdown" dropdown>
+                    <a mdbWavesEffect type="button" class="nav-link " (click)="vista(5)" mdbWavesEffect>
+                        Mesa</a>
+
+                </li>
+                <li class="nav-item dropdown" dropdown>
+                    <a mdbWavesEffect type="button" class="nav-link " mdbWavesEffect (click)="vista(7)">
+                        Productos</a>
+                </li>
+
+            </ul>
+            <div class="row col-3">
+                <span class="mr-3  mt-1 text-gray-600 small" style="color: #fff8d8"
+                    *ngIf="servicio.autenticar().afAuth.auth.currentUser">{{servicio.autenticar().afAuth.auth.currentUser.email}}
+                </span>
+                <span class="mr-3   text-gray-600 small" style="color: #fff8d8"
+                    *ngIf="servicio.autenticar().afAuth.auth.currentUser"><img
+                        src="{{servicio.usuarios().traerUsuarioActual().photoURL}}" alt=""
+                        style="max-width: 30px;"></span>
+
+            </div>
+            <div class="row col-3">
+                <span class="mr-3 text-gray-600 small" style="color: aliceblue"
+                    *ngIf="servicio.autenticar().afAuth.auth.currentUser"
+                    (click)="servicio.autenticar().signOut()">Logout</span>
+
+            </div>
+        </links>
+    </mdb-navbar>
+
+    <div id="imgBlurred" class="animated fadeIn"></div>
+
+    <main class="pt-5">
+
+        <div class="container-fluid top ">
+            <div class="card mb-4 wow fadeIn" style="background-color: rgba(51, 1, 1, 0.637)">
+                <div class="row mt-2" [ngSwitch]="opcion">
+                    <div class="col-12">
+                        <app-listado-usuarios class="slide-in-blurred-top" *ngSwitchCase="3" [filtro]="'cliente'">
+                        </app-listado-usuarios>
+                        <app-listado-mesa class="slide-in-blurred-top" *ngSwitchCase="5"></app-listado-mesa>
+                        <app-alta-usuario class="slide-in-blurred-top" *ngSwitchCase="4"> </app-alta-usuario>
+                        <app-listado-producto class="slide-in-blurred-top" *ngSwitchCase="7"></app-listado-producto>
+                        <app-listado-pedidos class="slide-in-blurred-top" *ngSwitchCase="9"></app-listado-pedidos>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer text-center font-small mt-4 wow fadeIn" style="background-color: #433334;">
+        <div class="pb-4">
+            <a href="https://github.com/marianomadou" target="_blank">
+                <i class="fab fa-github mr-3"></i>
+            </a>
+        </div>
+        <div class="footer-copyright py-3">
+            © 2019 Copyright:
+            <a href="http://marianomadou.com.ar" target="_blank"> marianomadou.com.ar</a>
+        </div>
+    </footer>
+</body>

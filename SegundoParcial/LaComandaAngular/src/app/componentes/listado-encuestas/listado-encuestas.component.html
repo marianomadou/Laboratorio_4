@@ -1,0 +1,31 @@
+<div class="col-12 text-center">
+    <div class="row">
+        <h4 class="h2-responsive font-weight-bold text-center " style="color: #fff8d8">Estadísticas
+        </h4>
+    </div>
+    <div class="row">
+        <button class="btn btn-indigo" (click)="graficar()" *ngIf='!grafico'>Mostrar estadísticas</button>
+        <button class="btn btn-cyan" (click)="graficar()" *ngIf='grafico'>Ocultar estadísticas</button>
+    </div>
+</div>
+<div class="row col-12">
+    <div class="col-8 mt-2" *ngIf="grafico">
+        <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+            style="width: 60%; height: 400px; display: block; margin-left: 150px; margin-right: 150px;">
+        </highcharts-chart>
+    </div>
+    <div class="col-4 mt-2"></div>
+</div>
+<div class="row col-12">
+    <div class="col-4 mt-2" *ngIf="grafico">
+        <button class="btn btn-success " (click)="exportAsXLSX()"> Download
+            <i class="fas fa-file-excel"></i>
+        </button>
+    </div>
+    <div class="col-4 mt-2" *ngIf="grafico">
+        <button class="btn btn-danger " (click)="generatePDF()"> Download
+            <i class="far fa-file-pdf"></i>
+        </button>
+    </div>
+    <div class="col-4 mt-2"></div>
+</div>

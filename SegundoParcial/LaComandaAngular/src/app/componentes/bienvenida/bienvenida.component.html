@@ -1,0 +1,131 @@
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: rgb(243, 218, 109)">Aguarde mientras se procesa la transacción...</p>
+</ngx-spinner>
+<div style="background-color: #433334;">
+    <mdb-navbar SideClass="navbar navbar-expand-lg">
+        <mdb-navbar-brand>
+            <a class="navbar-brand" (click)="ngOnInit()">
+                <img src="../../../assets/favicon_grande.png" height="30" class="d-inline-block align-top" alt="">
+            </a>
+        </mdb-navbar-brand>
+        <mdb-icon fas icon="angle-left" size="lg" class="text-white mr-auto d-flex d-md-none align-self-center">
+        </mdb-icon>
+    </mdb-navbar>
+</div>
+
+
+
+<div class="viewIMAGENES">
+    <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+        <div class="col-md-12 mb-5 mt-5" style="overflow: hidden;" *ngIf="ver">
+            <app-login></app-login>
+            <div class="d-flex justify-content-center">
+                <button type="button" class="btn btn-danger" (click)="ocultar()">Cerrar</button>
+            </div>
+        </div>
+        <div class="text-center white-text mx-5 wow fadeIn" *ngIf="!ver" style="margin-top: 50px;">
+            <h1 class="mx-5">
+                <strong>Bienvenido a Dinner</strong>
+            </h1>
+            <p class="mb-4 d-none d-md-block">
+                <strong>Dinner es uno de los restaurantes más famosos del mundo y se inspira en la fascinación que
+                    siente Heston Blumenthal por la gastronomía histórica. El concepto de Dinner, concebido por primera
+                    vez a finales de los años noventa, surgió de la fascinación de Blumenthal por los sabrosos helados
+                    de finales del siglo XIX, la teatralidad de la experiencia gastronómica tudor y los platos nombrados
+                    en Alicia en el País de las Maravillas de Lewis Carroll.</strong>
+            </p>
+            <a (click)="mostrar()" class="btn btn-outline-white btn-lg">
+                Logueese aquí para poder ser atendido
+                <i class="fas fa-graduation-cap ml-2"></i>
+            </a>
+        </div>
+
+    </div>
+</div>
+<main>
+    <div class="container">
+        <section class="mt-5 wow fadeIn" #solicitudmesa>
+            <h3 class="h3 text-center mb-5">Breve reseña de Dinner</h3>
+            <div class="row mt-1">
+                <div class="col-md-6 mt-2 mb-4">
+                    <div class="col-10 mt-2">
+                        <h4 class="feature-title mt-3">Un viaje al pasado culinario británico.</h4>
+                        <p class="grey-text">“Nunca es fácil poner nombre a un restaurante. En esta ocasión, quería algo
+                            que representara nuestro menú, inspirado en la histórica gastronomía británica, así que
+                            busqué un nombre que tuviera un poco de historia, pero que fuera divertido a la vez.</p>
+                        <p class="grey-text"> Antiguamente, la comida principal o ‘dinner’ se tomaba a mediodía, antes
+                            de que anocheciera.
+                            El precio asequible de las velas, y después, las lámparas de gas, hicieron que dicha comida
+                            se retrasara.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mt-2 mb-4">
+                    <div class="col-10 mt-2">
+                        <h4 class="feature-title mt-3">Historia.</h4>
+                        <p class="grey-text"> Incluso hoy, dependiendo del lugar en el que se encuentre de las islas
+                            británicas, la comida principal o ‘dinner’ puede servirse a la hora del almuerzo, de la
+                            merienda o, por supuesto, a la de la cena.</p>
+                        <p class="grey-text"> Esto hizo que ‘Dinner’ fuera la elección natural para el nombre, por su
+                            peculiar historia
+                            británica y el juego de palabras. Como mínimo, espero que resulte fácil de recordar”.</p>
+                        <p class="grey-text">A mediados del siglo XIX, se tomaba la comida principal cada vez más tarde.
+                            Las personas que trabajaban en las ciudades se llevaban el almuerzo o ‘lunch’ al trabajo, y
+                            tomaban su comida principal sobre las 17:00, cuando llegaban a casa, mientras que en las
+                            zonas rurales seguía tomándose a mediodía.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr class="my-5">
+        <section>
+            <h3 class="h3 text-center mb-5">Cena en privado</h3>
+            <div class="row wow fadeIn">
+                <div class="col-lg-8 col-md-12 px-4">
+                    <div class="row">
+                        <div class="col-10">
+                            <h5 class="feature-title">Amplio y, a la vez, privado</h5>
+                            <p class="grey-text">Disfrute de una aventura culinaria en el exclusivo entorno de nuestro
+                                estupendo comedor privado. Con capacidad para hasta 12 comensales, este espacio de
+                                inspiración Tudor del siglo XVI es ideal para celebraciones privadas o para elegantes
+                                reuniones de empresa.</p>
+                        </div>
+                    </div>
+                    <div style="height:30px"></div>
+                    <div class="row">
+                        <div class="col-10">
+                            <p class="grey-text">Su elegante sala incluye paredes de cuero repujado y una réplica de la
+                                Mesa del Rey del palacio de Westminster, con sillas con imaginería gótica que rinden
+                                homenaje a los señoriales ingredientes empleados en cada uno de nuestros históricos
+                                platos. La sala se completa con una preciosa lámpara central, elaborada con las piezas
+                                de cristal soplado a mano más grandes de Gran Bretaña.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="height:30px"></div>
+                    <div class="row">
+                        <div class="col-10">
+                            <p class="grey-text">La ventana ofrece vistas a la energía y la actividad del comedor
+                                principal, y vistas a Hyde Park, con una persiana que puede cerrarse para garantizar la
+                                privacidad absoluta.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <img src="../../../assets/mesa_special.jpg" class="img-fluid z-depth-1-half rounded" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<footer class="page-footer text-center font-small mt-4 wow fadeIn" style="background-color: #433334;">
+    <div class="pb-4">
+        <a href="https://github.com/marianomadou" target="_blank">
+            <i class="fab fa-github mr-3"></i>
+        </a>
+    </div>
+    <div class="footer-copyright py-3">
+        © 2019 Copyright:
+        <a href="http://marianomadou.com.ar" target="_blank"> marianomadou.com.ar</a>
+    </div>
+</footer>

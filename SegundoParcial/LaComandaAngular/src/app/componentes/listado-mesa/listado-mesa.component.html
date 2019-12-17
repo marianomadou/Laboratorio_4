@@ -1,0 +1,164 @@
+<!-- <div>
+    <h3>Listado de Mesas <button type="button" class="btn btn-danger xs" (click)="limpiarTodasLasMesas()">Limpiar Mesas </button></h3>
+    <div class="row ">
+        <div class="card col-md-6 col-lg-3" *ngFor="let mesa of mesas">
+            <div class=" card-body ">
+                <h3>Mesa {{mesa.numero}}</h3>
+                <img src="{{mesa.url}}" style="max-width: 100%">
+                <p>Comensales: {{mesa.cantidadComensales}} </p>
+                <p style="font-weight: bold; color:rgb(203, 25, 219)" *ngIf="mesa.estado=='comiendo'">Estado
+                    {{mesa.estado}} </p>
+                <p style="font-weight: bold; color:brown" *ngIf="mesa.estado=='terminada'">Estado {{mesa.estado}} </p>
+                <p style="font-weight: bold; color:rgb(236, 205, 26)" *ngIf="mesa.estado=='reservada'">Estado
+                    {{mesa.estado}}
+                </p>
+                <p style="font-weight: bold; color:rgb(46, 165, 42)" *ngIf="mesa.estado=='disponible'">Estado
+                    {{mesa.estado}}
+                </p>
+                <p style="font-weight: bold; color:rgb(9, 88, 6)" *ngIf="mesa.estado=='esperandoComida'">Estado
+                    {{mesa.estado}}
+                </p>
+                <p class="feature-title mt-3" *ngIf="mesa.estado=='solicitada'">Estado
+                    {{mesa.estado}}
+                </p>
+                <p style="font-weight: bold; color:rgb(0, 0, 0)" *ngIf="mesa.estado=='inicioServicio'">Estado
+                    {{mesa.estado}}
+                </p>
+                <p style="font-weight: bold; color:rgb(77, 7, 134)" *ngIf="mesa.estado=='cuentaPedida'">Estado
+                    {{mesa.estado}}
+                </p>
+                <p style="font-weight: bold; color:rgb(19, 187, 14)" *ngIf="mesa.estado=='pagando'">Estado
+                    {{mesa.estado}}
+                </p>
+                <p style="font-weight: bold; color:rgb(138, 8, 8)" *ngIf="mesa.estado=='cerrada'">Estado {{mesa.estado}}
+                </p>
+                <p style="font-weight: bold; color:rgb(134, 10, 10)" *ngIf="mesa.estado=='pedidoListo'">Estado
+                    {{mesa.estado}}
+                </p>
+                <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='solicitada'"
+                    (click)="confirmarReserva(mesa)">Confirmar Reserva</button>
+                <button type="button" class="btn btn-danger" *ngIf="mesa.estado=='solicitada'"
+                    (click)="cerrarMesa(mesa, 'cerrada')"> No aceptar Solicitud </button>
+                <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='pedidoListo'"
+                    (click)="entregarPedido(mesa)">Entregar Pedido</button>
+                <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='reservada'"
+                    (click)="confirmarServicio(mesa)">Confirmar inicio del servicio</button>
+                <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='cuentaPedida'"
+                    (click)="emitirFactura(mesa)">Emitir Factura</button>
+                <button type="button" class="btn btn-danger" *ngIf="mesa.estado=='pagoEnviado'" size="small"
+                    (click)="cerrarMesa(mesa, 'cerrada')">Cerrar Mesa</button>
+                <span *ngIf="servicioGeneral.usuarios().usuarioActual.perfil=='admin'">
+                    <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='pagando'"
+                        (click)="cerrarMesa(mesa, 'cerrada')"> Cerrar </button></span>
+                <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='cerrada'"
+                    (click)="limpiarUnaMesa(mesa)"><span>Limpiar</span></button>
+
+            </div>
+        </div>
+    </div>
+</div>
+ -->
+<main>
+    <div class="container">
+        <!--Section: Products v.3-->
+        <section class="text-center mb-4">
+            <!--Grid row-->
+            <div class="row wow fadeIn">
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4" *ngFor="let mesa of mesas">
+                    <!--Card-->
+                    <div class="card">
+                        <!--Card image-->
+                        <div class="view overlay">
+                            <img src="{{mesa.url}}" class="card-img-top" alt="">
+                            <a>
+                                <div class="mask rgba-white-slight"></div>
+                            </a>
+                        </div>
+                        <!--Card image-->
+                        <!--Card content-->
+                        <div class="card-body text-center">
+                            <!--Category & Title-->
+                            <a href="" class="grey-text">
+                                <h5>Mesa {{mesa.numero}}</h5>
+                            </a>
+                            <h5>
+                                <strong>
+                                    <a href="" class="dark-grey-text">Comensales: {{mesa.cantidadComensales}}
+                                    </a>
+                                </strong>
+                            </h5>
+
+                            <h4 class="font-weight-bold blue-text">
+                                <p style="font-weight: bold; color:rgb(203, 25, 219)" *ngIf="mesa.estado=='comiendo'">
+                                    Estado
+                                    {{mesa.estado}} </p>
+                                <p style="font-weight: bold; color:brown" *ngIf="mesa.estado=='terminada'">Estado
+                                    {{mesa.estado}} </p>
+                                <p style="font-weight: bold; color:rgb(236, 205, 26)" *ngIf="mesa.estado=='reservada'">
+                                    Estado
+                                    {{mesa.estado}}
+                                </p>
+                                <p style="font-weight: bold; color:rgb(46, 165, 42)" *ngIf="mesa.estado=='disponible'">
+                                    Estado
+                                    {{mesa.estado}}
+                                </p>
+                                <p style="font-weight: bold; color:rgb(9, 88, 6)"
+                                    *ngIf="mesa.estado=='esperandoComida'">Estado
+                                    {{mesa.estado}}
+                                </p>
+                                <p class="feature-title mt-3" *ngIf="mesa.estado=='solicitada'">Estado
+                                    {{mesa.estado}}
+                                </p>
+                                <p style="font-weight: bold; color:rgb(0, 0, 0)" *ngIf="mesa.estado=='inicioServicio'">
+                                    Estado
+                                    {{mesa.estado}}
+                                </p>
+                                <p style="font-weight: bold; color:rgb(77, 7, 134)" *ngIf="mesa.estado=='cuentaPedida'">
+                                    Estado
+                                    {{mesa.estado}}
+                                </p>
+                                <p style="font-weight: bold; color:rgb(19, 187, 14)" *ngIf="mesa.estado=='pagando'">
+                                    Estado
+                                    {{mesa.estado}}
+                                </p>
+                                <p style="font-weight: bold; color:rgb(138, 8, 8)" *ngIf="mesa.estado=='cerrada'">Estado
+                                    {{mesa.estado}}
+                                </p>
+                                <p style="font-weight: bold; color:rgb(134, 10, 10)" *ngIf="mesa.estado=='pedidoListo'">
+                                    Estado
+                                    {{mesa.estado}}
+                                </p>
+                            </h4>
+                            <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='solicitada'"
+                                (click)="confirmarReserva(mesa)">Confirmar Reserva</button>
+                            <button type="button" class="btn btn-danger" *ngIf="mesa.estado=='solicitada'"
+                                (click)="cerrarMesa(mesa, 'cerrada')"> No aceptar Solicitud </button>
+                            <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='pedidoListo'"
+                                (click)="entregarPedido(mesa)">Entregar Pedido</button>
+                            <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='reservada'"
+                                (click)="confirmarServicio(mesa)">Confirmar inicio del servicio</button>
+                            <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='cuentaPedida'"
+                                (click)="emitirFactura(mesa)">Emitir Factura</button>
+                            <button type="button" class="btn btn-danger" *ngIf="mesa.estado=='pagoEnviado'" size="small"
+                                (click)="cerrarMesa(mesa, 'cerrada')">Cerrar Mesa</button>
+                            <span *ngIf="servicioGeneral.usuarios().usuarioActual.perfil=='admin'">
+                                <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='pagando'"
+                                    (click)="cerrarMesa(mesa, 'cerrada')"> Cerrar </button></span>
+                            <button type="button" class="btn btn-warning" *ngIf="mesa.estado=='cerrada'"
+                                (click)="limpiarUnaMesa(mesa)"><span>Limpiar</span></button>
+                        </div>
+                        <!--Card content-->
+
+                    </div>
+                    <!--Card-->
+
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </section>
+        <!--Section: Products v.3-->
+    </div>
+</main>
+<!--Main layout-->

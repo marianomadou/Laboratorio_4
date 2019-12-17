@@ -1,0 +1,20 @@
+<div style="text-align:center">
+    <h1>
+        ABM Usuario
+    </h1>
+    <form [formGroup]="angForm" novalidate>
+
+        <div class="form-group">
+            <label class="center-block">Numero:
+                  <input class="form-control" type="number" formControlName="numero">
+                </label>
+        </div>
+        <div *ngIf="angForm.controls['numero'].invalid && (angForm.controls['numero'].dirty || angForm.controls['numero'].touched)" class="alert alert-danger ">
+            <div *ngIf="angForm.controls['numero'].errors.required">
+                Numero is required.
+            </div>
+        </div>
+    </form>
+    <!--     <p>Form value: {{ angForm.value | json }}</p>
+        <p>Form status: {{ angForm.status | json }}</p> -->
+</div>

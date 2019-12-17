@@ -1,0 +1,92 @@
+.md-avatar {
+  width: 30px;
+  height: 30px;
+}
+.md-avatar.size-1 {
+  width: 40px;
+  height: 40px;
+}
+.md-avatar.size-2 {
+  width: 70px;
+  height: 70px;
+}
+.md-avatar.size-3 {
+  width: 90px;
+  height: 90px;
+}
+.md-avatar.size-4 {
+  width: 110px;
+  height: 110px;
+}
+
+body, html
+{
+    height: 100%;
+    background: black;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+.top
+{
+    text-align: center;
+    width: 90% !important;
+    top: 5%;
+    position: absolute;
+    z-index: 2;
+    color: var(--secondary-color-step-300);
+}
+
+.top>h1
+{
+    font-size: 40pt;
+    margin-bottom: 5%;
+    font-weight: bolder;
+
+}
+
+.top>a>button
+{
+    background-color: var(--secondary-color-step-100);
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#imgBlurred
+{
+    background-image: url('../../../assets/back7.JPG');
+    height: 100vh;
+    filter: blur(10px);
+    -webkit-filter: brightness(50%)  blur(5px);
+    -moz-filter: brightness(50%) blur(5px);
+    -o-filter: brightness(50%) blur(5px);
+    -ms-filter: brightness(50%) blur(5px);
+
+    background-position: center;
+    background-repeat:repeat-y;
+    background-size: cover;
+
+}
+
+.slide-in-blurred-top {
+	animation: slide-in-blurred-top 1s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+ @keyframes slide-in-blurred-top {
+    0% {
+      transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
+      transform-origin: 50% 0%;
+      filter: blur(40px);
+      
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0) scaleY(1) scaleX(1);
+      transform-origin: 50% 50%;
+      filter: blur(0);
+      opacity: 1;
+    }
+  }

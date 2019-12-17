@@ -1,0 +1,65 @@
+<div class="invoice-box">
+    <table cellpadding="0" cellspacing="0">
+        <tr class="top">
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td>
+                           
+                            <div class="item ml-5" >
+                                <h5>FACTURA</h5>
+                                <p>Fecha de emisión: 09/12/2019</p>
+                                <hr>
+                                <p class="font-weight-bold">CUIT: 20-27387009-2</p>
+                                <p class="font-weight-bold">Fecha de inicio de actividades: 09/12/2019</p>
+                                <p class="font-weight-bold">Mesa Nº {{mesa.numero}}</p>
+                            </div>
+                        </td>
+                        <td class="ml-5">
+                                Nombre del cliente: <span class="font-weight-bold"
+                                *ngIf="servicioGeneral.autenticar().afAuth.auth.currentUser">
+                                {{servicioGeneral.autenticar().afAuth.auth.currentUser.email}}
+                            </span>
+                            <img src="../../../assets/favicon_grande.png" class="img-thumbnail ml-5">
+                        </td>
+
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="heading">
+            <td>
+                Producto
+            </td>
+            <td>
+                Descripción
+            </td>
+            <td>
+                Precio
+            </td>
+        </tr>
+        <tr class="item" *ngFor="let producto of todosPedidos">
+            <td>
+                {{producto.nombre}}
+            </td>
+            <td>
+                {{producto.descripcion}}
+            </td>
+            <td>
+                ${{producto.stock}}
+            </td>
+        </tr>
+
+
+
+        <tr class="total">
+            <td></td>
+            <td></td>
+            <td>
+                <p class="font-weight-bold mr-5"> Total: {{total}}</p>
+            </td>
+        </tr>
+    </table>
+    <button type="button" class="btn btn-primary btn-block" (click)="enviarPago();" *ngIf="this.mesa.estado=='pagando'">
+        Pagar</button>
+</div>

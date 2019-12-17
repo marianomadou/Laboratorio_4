@@ -1,0 +1,57 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark primary-color">
+    <mdb-navbar-brand>
+        <a class="navbar-brand" (click)="vista(7)">
+            <img src="../../../assets/favicon.png" height="30" class="d-inline-block align-top" alt="" (click)="vista(7)">
+        </a>
+    </mdb-navbar-brand>
+    <mdb-icon fas icon="angle-left" size="lg" class="text-white mr-auto d-flex d-md-none align-self-center"></mdb-icon>
+    <links>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown" dropdown>
+                <a class="nav-link waves-light"> Invitado</a>
+            </li>
+            <!--   <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                Mesa<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" (click)="vista(6)">Consultar por Codigo</a>
+                </div>
+            </li> -->
+            <li class="nav-item dropdown" dropdown>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                Productos<span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" (click)="vista(7)">Lista de Precios</a>
+                </div>
+            </li>
+        </ul>
+        <div class="row col-3">
+            <span class="mr-3  mt-1 text-gray-600 small" style="color: aliceblue" *ngIf="servicio.autenticar().afAuth.auth.currentUser">{{servicio.autenticar().afAuth.auth.currentUser.email}}   </span>
+            <span class="mr-3   text-gray-600 small" style="color: aliceblue" *ngIf="servicio.autenticar().afAuth.auth.currentUser"><img src="{{servicio.autenticar().afAuth.auth.currentUser.photoURL}}" alt="" style="max-width: 30px;"></span>
+
+        </div>
+        <div class="row col-3">
+
+            <span class="mr-3 text-gray-600 small" style="color: aliceblue" *ngIf="servicio.autenticar().afAuth.auth.currentUser" (click)="servicio.autenticar().signOut()">Logout</span>
+        </div>
+    </links>
+</mdb-navbar>
+
+
+<main>
+    <div class="row" style="margin-top: 5%" [ngSwitch]="opcion">
+        <div class="col-3  col-sm-1 col-xs-1"></div>
+        <div class="col-6 col-sm-10 col-xs-10">
+            <app-listado-usuarios *ngSwitchCase="1" [filtro]="'todos'"></app-listado-usuarios>
+            <app-listado-usuarios *ngSwitchCase="3" [filtro]="'cliente'"></app-listado-usuarios>
+            <app-alta-usuario *ngSwitchCase="4"> </app-alta-usuario>
+            <app-alta-producto *ngSwitchCase="8"></app-alta-producto>
+            <app-listado-producto *ngSwitchCase="7"></app-listado-producto>
+            <app-alta-mesa *ngSwitchCase="9"></app-alta-mesa>
+        </div>
+        <div class="col-3  col-sm-1 col-xs-1"></div>
+    </div>
+
+
+</main>

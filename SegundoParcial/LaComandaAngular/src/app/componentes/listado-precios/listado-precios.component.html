@@ -1,0 +1,40 @@
+<!--Section heading-->
+<div class="row text-center">
+    <div class="col-4">
+        <!--         <h2 class="h2-responsive font-weight-bold text-center ">Realizar Pedido</h2> -->
+    </div>
+    <div class="col-4 ">
+        <button type="button" class="btn btn-info btn-block" (click)="terminarPedido()">Finalizar el pedido $
+            {{total}}</button>
+    </div>
+    <!-- <div class="col-2 ">//MARIANO
+        <select class="browser-default custom-select" id="tipoOrden" (change)=" ordenar()">
+            <option value="tipo">Tipo</option>
+            <option value="nombre">Nombre</option>
+        </select>
+    </div>
+    <div class="col-2">
+        <select class="browser-default custom-select" id="orden" (change)="ordenar()">
+            <option value="asc">Ascendente</option>
+            <option value="desc">Descendente</option>
+        </select>
+    </div> -->
+</div>
+
+<div class="row mt-5">
+    <div class="card col-lg-4" *ngFor="let producto of peliculas">
+        <div class=" card-body ">
+            <div appColorBadgeArea [estado]="producto.tipo"> {{producto.tipo | areas}} </div>
+            <h5 class="grey-text-bold">{{producto.nombre}}</h5>
+            <div class="d-flex justify-content-center">
+                <div class="card-circle d-flex justify-content-center align-items-center">
+                    <img src="{{producto.url}}" class="img-thumbnail" alt="{{producto.url}}"
+                        style="max-width:180px;max-height:180px; margin-left: auto; margin-right: auto;   height:auto;">
+                </div>
+            </div>
+            <h3 class="grey-text-bold my-2">$ {{producto.stock}}</h3>
+            <p class="grey-text"> {{producto.descripcion}}</p>
+            <app-boton-agregar [producto]="producto " (enviar)="recibir($event)"></app-boton-agregar>
+        </div>
+    </div>
+</div>

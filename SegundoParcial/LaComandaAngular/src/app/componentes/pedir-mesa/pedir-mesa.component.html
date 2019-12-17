@@ -1,0 +1,59 @@
+<div class="row wow fadeIn" *ngIf="!pedida">
+    <div class="col-lg-6 col-md-12 px-4">
+        <div class="row">
+            <div class="col-1 mr-3">
+                <!-- <i class="fas fa-users fa-1x brown-text"></i> -->
+            </div>
+            <div class="col-10">
+                <div class="p-2 bd-highlight">
+                    <h5 class="feature-title  d-flex justify-content-center">Seleccione la cantidad de comensales</h5>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 mr-3">
+                <i class="fas fa-user-plus fa-2x brown-text"></i>
+            </div>
+            <div class="col-10">
+                <div class="def-number-input number-input safari_only">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                        class="minus"></button>
+                    <input class="quantity" name="quantity" type="number" min="1" max="16" [(ngModel)]="comensales">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                        class="plus"></button>
+                </div>
+            </div>
+        </div>
+        <div style="height:30px"></div>
+        <div class="row">
+            <div class="col-1 mr-0">
+
+            </div>
+            <div class="col-10">
+                <div class="p-2 bd-highlight">
+                    <a (click)="pedirMesa()" class="btn btn-outline-black btn-lg">
+                        Solicite aquí su mesa <i class="fas fa-utensils"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12 flex-center">
+        <img src="../../../assets/back_reloj_minus.JPG" alt="" class="img-fluid z-depth-1-half rounded">
+    </div>
+</div>
+
+<div *ngIf="pedida">
+    <h5 class="feature-title text-center">Las siguientes mesas están disponibles para usted acorde a sus necesidades
+    </h5>
+    <div class="row features-small mt-5 wow fadeIn d-flex justify-content-center">
+        <div class="col-md-4 col-lg-4 card mx-auto" *ngFor="let mesa of mesas">
+            <div class=" card-body ">
+                <img src="{{mesa.url}}" class="img-fluid z-depth-1-half rounded">
+                <h5 class="feature-title mt-2">Mesa: {{mesa.numero}}</h5>
+                <p class="grey-text">Comensales: {{mesa.cantidadComensales}} </p>
+                <button type="button" class="btn btn-outline-brown" (click)="elegirMesa(mesa)">Seleccionar</button>
+            </div>
+        </div>
+    </div>
+</div>

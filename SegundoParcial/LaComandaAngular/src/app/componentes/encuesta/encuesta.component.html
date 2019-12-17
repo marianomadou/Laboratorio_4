@@ -1,0 +1,33 @@
+<div class="card">
+
+    <h5 class="card-headerwhite-text text-center py-4" style="background-color: brown;">
+        <strong> Encuesta de satisfacción al cliente</strong>
+    </h5>
+
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+
+        <p class="mt-3"> ¿Cómo valora la atención de los mozos?</p>
+        <app-puntos-encuesta [nombre]="'mozo'" (elegir)="notaMozo($event)"></app-puntos-encuesta>
+
+        <hr>
+        <p> ¿Cómo estuvo la comida?</p>
+        <app-puntos-encuesta [nombre]="'comida'" (elegir)="notaCocina($event)"></app-puntos-encuesta>
+        <hr>
+        <p> ¿Cómo estuvo la bebida?</p>
+        <app-puntos-encuesta [nombre]="'bebida'" (elegir)="notaBebida($event)"></app-puntos-encuesta>
+        <hr>
+        <p class="mt-3"> ¿Cómo valora el estado de las instalaciones?</p>
+        <app-puntos-encuesta [nombre]="'general'" (elegir)="notaGeneral($event)"></app-puntos-encuesta>
+        <form action="">
+            <div class="md-form">
+                <input class="form-control" type="text" name="sugerencia" id="sugerencia" [(ngModel)]="sugerencia" maxlength='66'>
+                <label for="sugerencia">Deje aquí sus sugerencias o comentarios</label>
+
+            </div>
+        </form>
+
+        <button class="btn btn-outline-brown btn-rounded btn-block my-4 waves-effect z-depth-0" (click)="guardar()">Enviar encuesta</button>
+
+    </div>
+</div>

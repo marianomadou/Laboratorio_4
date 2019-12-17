@@ -1,0 +1,131 @@
+.bg-login-image {
+    /*    background: url("../../../assets/HOLA.png"); */
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-register-image {
+    background: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-password-image {
+    background: url("https://source.unsplash.com/oWTW-jNGl9I/600x800");
+    background-position: center;
+    background-size: cover;
+}
+
+form.user .custom-checkbox.small label {
+    line-height: 1.5rem;
+}
+
+form.user .form-control-user {
+    font-size: 0.8rem;
+    border-radius: 10rem;
+    padding: 1.5rem 1rem;
+}
+
+form.user .btn-user {
+    font-size: 0.8rem;
+    border-radius: 10rem;
+    padding: 0.75rem 1rem;
+}
+
+form.user .btn-user2 {
+    font-size: 0.8rem;
+    border-radius: 15px;
+    padding: 0.75rem 1rem;
+}
+
+.btn-google {
+    color: #fff;
+    background-color: #ea4335;
+    border-color: #fff;
+}
+
+.btn-anonimo {
+    color: #fff;
+    background-color: #08bb2f;
+    border-color: #fff;
+}
+
+.btn-entra {
+    color: #fff;
+    background-color: #6a08bb;
+    border-color: #fff;
+}
+
+.btn-google:hover {
+    color: #fff;
+    background-color: #e12717;
+    border-color: #e6e6e6;
+}
+
+.btn-google:focus,
+.btn-google.focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.btn-google.disabled,
+.btn-google:disabled {
+    color: #fff;
+    background-color: #ea4335;
+    border-color: #fff;
+}
+
+.btn-google:not(:disabled):not(.disabled):active,
+.btn-google:not(:disabled):not(.disabled).active,
+.show>.btn-google.dropdown-toggle {
+    color: #fff;
+    background-color: #d62516;
+    border-color: #dfdfdf;
+}
+
+.btn-google:not(:disabled):not(.disabled):active:focus,
+.btn-google:not(:disabled):not(.disabled).active:focus,
+.show>.btn-google.dropdown-toggle:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.btn-facebook {
+    color: #fff;
+    background-color: #373738;
+    border-color: #fff;
+}
+
+.btn-facebook:hover {
+    color: #fff;
+    background-color: #1e1f20;
+    border-color: #e6e6e6;
+}
+
+.btn-facebook:focus,
+.btn-facebook.focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
+
+.btn-facebook.disabled,
+.btn-facebook:disabled {
+    color: #fff;
+    background-color: #3b5998;
+    border-color: #fff;
+}
+
+.btn-facebook:not(:disabled):not(.disabled):active,
+.btn-facebook:not(:disabled):not(.disabled).active,
+.show>.btn-facebook.dropdown-toggle {
+    color: #fff;
+    background-color: #2d4373;
+    border-color: #dfdfdf;
+}
+
+.btn-facebook:not(:disabled):not(.disabled):active:focus,
+.btn-facebook:not(:disabled):not(.disabled).active:focus,
+.show>.btn-facebook.dropdown-toggle:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.5);
+}
