@@ -38,7 +38,13 @@ Github deploy en:
 
 ### https://marianomadou.github.io/
 
-### Repositorio:  https://github.com/marianomadou/Laboratorio_4/tree/master/TP-Sala-de-Juegos-ANGULAR--master
+Build: 
+
+### https://github.com/marianomadou/marianomadou.github.io
+
+Repositorio: 
+
+### https://github.com/marianomadou/Laboratorio_4/tree/master/TP-Sala-de-Juegos-ANGULAR--master
 
 Tenemos una aplicación de juegos que permite a nuestros usuarios (jugadores) medir sus capacidades cognitivas y motrices, debe ser simple de utilizar y que nos permita tener estadísticas de cada jugador y de cada juego. 
 
