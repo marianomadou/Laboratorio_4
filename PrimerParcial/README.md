@@ -1,6 +1,3 @@
-www.luloop.com.ar
-
-
 
 # PrimerParcialL4
 
