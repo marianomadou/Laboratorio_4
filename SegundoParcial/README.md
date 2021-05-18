@@ -13,7 +13,7 @@ Si es empleado y recién está haciendo su primer registro, deberá hacerlo como
 
 *Debajo se encuentra un ejemplo de logueo de cliente y de empleado, ingresando a sus diferentes rutas seguras por intermedio de sus respectivos guards.*
 
-<a href="https://www.youtube.com/embed/dFp_ZLctoxw" target="_blank"><img src="https://github.com/marianomadou/comandaPrivate/blob/master/capturas_de_pantallas/login.JPG" alt="pantalla de logueo" width="882" height="487"/></a>
+<a href="https://www.youtube.com/embed/dFp_ZLctoxw" target="_blank"><img src="https://github.com/marianomadou/Laboratorio_4/master/capturas_de_pantallas/login.JPG" alt="pantalla de logueo" width="882" height="487"/></a>
 
 
 ### El cliente realiza un pedido completo
@@ -22,18 +22,18 @@ El proceso concluye cuando al cliente se le entrega la comida y este tiene la po
 
 *Debajo se encuentra un ejemplo del proceso completo del pedido desde la vista del cliente.*
 
-<a href="https://www.youtube.com/embed/BkSLZMUWeyQ" target="_blank"><img src="https://github.com/marianomadou/comandaPrivate/blob/master/capturas_de_pantallas/cliente_hace_pedido.JPG" alt="pantalla de logueo" width="882" height="486"/></a>
+<a href="https://www.youtube.com/embed/BkSLZMUWeyQ" target="_blank"><img src="https://github.com/marianomadou/Laboratorio_4/master/capturas_de_pantallas/cliente_hace_pedido.JPG" alt="pantalla de logueo" width="882" height="486"/></a>
 
 *Debajo se encuentra un ejemplo del proceso completo del pedido desde la vista del cliente desde un dispositivo movil (Samsung A30).*
 
-<a href="https://www.youtube.com/embed/eH5zPbQClcU" target="_blank"><img src="https://github.com/marianomadou/comandaPrivate/blob/master/capturas_de_pantallas/usuariocomandapedido.jpg" alt="pantalla de logueo" width="224" height="486"/></a>
+<a href="https://www.youtube.com/embed/eH5zPbQClcU" target="_blank"><img src="https://github.com/marianomadou/Laboratorio_4/master/capturas_de_pantallas/usuariocomandapedido.jpg" alt="pantalla de logueo" width="224" height="486"/></a>
 
 ### El perfil administrador / socio
 El perfil del socio tiene control sobre todos los estados del pedido, de los perfiles de los usuarios (clientes o empleados), también cuenta con la posibilidad de ejecutar altas, bajas y modificaciones tanto de mesas como de productos.
 Actualmente me encuentro desarrollando una nueva funcionalidad para el perfil del administrador. Esta nueva funcionalidad es capaz de graficar estadísticas relacionadas con las encuestas de satisfacción que los usuarios completan al finalizar las instancia del pedido. 
 Adicionalmente se podrán descargar los datos de las encuestas en formato XLSX y PDF.
 
-<a href="https://www.youtube.com/embed/vgdLLdCj09c" target="_blank"><img src="https://github.com/marianomadou/comandaPrivate/blob/master/capturas_de_pantallas/perfil_admin.JPG" alt="pantalla de logueo" width="882" height="487"/></a>
+<a href="https://www.youtube.com/embed/vgdLLdCj09c" target="_blank"><img src="https://github.com/marianomadou/Laboratorio_4/master/capturas_de_pantallas/perfil_admin.JPG" alt="pantalla de logueo" width="882" height="487"/></a>
 
 
 
