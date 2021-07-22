@@ -46,7 +46,7 @@
         "save": "^2.4.0",
         "toastr": "^2.1.4",
         "tslib": "^1.10.0",
-        "xlsx": "^0.15.2",
+        "xlsx": "^0.17.0",
         "zone.js": "~0.9.1"
     },
     "devDependencies": {
