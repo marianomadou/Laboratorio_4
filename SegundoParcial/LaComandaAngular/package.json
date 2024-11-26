@@ -30,7 +30,7 @@
         "file-saver": "^2.0.2",
         "firebase": "^7.2.1",
         "hammerjs": "^2.0.8",
-        "highcharts": "^7.2.1",
+        "highcharts": "^9.0.0",
         "highcharts-angular": "^2.4.0",
         "html2canvas": "^1.0.0-rc.5",
         "jarallax": "^1.12.0",
